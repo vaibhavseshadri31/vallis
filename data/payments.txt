@@ -1,0 +1,10 @@
+Payments on Shopify
+
+What is a third-party payment processor?
+A third-party payment processor (also knows as a payment provider or payment gateway) lets you accept online payments.
+
+What currencies does Shopify work with?
+You can sell and accept payments in many currencies, depending on what payment provider (also known as third party payment processors or payment gateways) you use. For more information, you can view a list of supported payment gateways.
+
+What is a merchant account?
+A merchant account is an account where your money is deposited after your customers’ payments have been authorized and processed.

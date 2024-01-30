@@ -15,7 +15,10 @@ def main():
     # logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
     # logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
-    query_engine = create_query_engine()
+    # set to true to update embeddings in storage
+    new_store = True
+
+    query_engine = create_query_engine(new_store)
 
     print("\nHelios.ai mentor, type \"quit\" when you are done\n")
 
@@ -29,10 +32,10 @@ def main():
         print("\n", response, "\n")
 
 
-def create_query_engine():
+def create_query_engine(new_store):
     # check if storage already exists
     PERSIST_DIR = "../storage"
-    if not os.path.exists(PERSIST_DIR):
+    if new_store or not os.path.exists(PERSIST_DIR):
         # load the documents and create the index
         documents = SimpleDirectoryReader("../data").load_data()
         index = VectorStoreIndex.from_documents(documents)

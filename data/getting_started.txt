@@ -1,0 +1,45 @@
+Getting started with Shopify
+
+What is Shopify and how does it work?
+Shopify is a complete commerce platform that lets you start, grow, and manage a business.
+
+Create and customize an online store
+
+Sell in multiple places, including web, mobile, social media, online marketplaces, brick-and-mortar locations, and pop-up shops
+
+Manage products, inventory, payments, and shipping
+
+Shopify is completely cloud-based and hosted, which means you don’t have to worry about upgrading or maintaining software or web servers. This gives you the flexibility to access and run your business from anywhere with an internet connection.
+
+How much does Shopify cost?
+Try Shopify free for 3 days, no credit card required.
+
+After your trial expires, choose a pricing plan that suits the size and stage of your business.
+
+Can I use my own domain name with Shopify?
+Yes, you can use your own domain name with Shopify.
+
+If you have an existing domain name, you can connect it to Shopify from your store’s admin. Learn more about connecting an existing domain to a Shopify store.
+
+If you don’t have a domain name yet, you can either buy one through Shopify or a third-party provider.
+
+Do I need to be a designer or developer to use Shopify?
+No, you don’t need to be a designer or developer to use Shopify.
+
+Customize the look and feel of your store with the online store builder and themes.
+
+Add features and functionality to your store with apps.
+
+If you need extra help, you can contact our support team, or visit the Shopify Expert Marketplace to search for and hire a certified Shopify expert.
+
+In what countries can I use Shopify?
+You can use Shopify in nearly every country in the world.
+
+Which languages does Shopify support?
+The customer-facing parts of your Shopify store, including ecommerce website, blog, checkout, and emails can be in any language if the theme supports it. Learn more and explore our themes.
+
+The admin of your Shopify store is currently available in English, Chinese (Simplified), Chinese (Traditional), Czech, Danish, Dutch, Finnish, French, German, Italian, Japanese, Korean, Norwegian, Polish, Portuguese (Brazil), Portuguese (Portugal), Spanish, Swedish, Thai, and Turkish.
+
+Do I need to ship items myself?
+No, you don’t need to ship items yourself. You can use a third-party fulfilment service to prepare and ship your orders for you.
+
