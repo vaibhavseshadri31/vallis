@@ -28,7 +28,7 @@ def main():
         if query == "quit":
             break
 
-        response = query_engine.query(query)
+        response = query_engine.chat(query)
         print("\n", response, "\n")
 
 
@@ -48,7 +48,7 @@ def create_query_engine(new_store):
         storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
         index = load_index_from_storage(storage_context)
 
-    return index.as_query_engine()
+    return index.as_chat_engine()
 
 
 if __name__ == '__main__':
