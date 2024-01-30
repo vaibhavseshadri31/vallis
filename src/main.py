@@ -11,10 +11,13 @@ documents = SimpleDirectoryReader("data").load_data()
 index = VectorStoreIndex.from_documents(documents)
 query_engine = index.as_query_engine()
 
-query = input("What can I assist you with?\n")
-response = query_engine.query(query)
-print(response)
+print("\nHelios.ai mentor, type \"quit\" when you are done\n")
 
-query = input("Anything else?\n")
-response = query_engine.query(query)
-print(response)
+while (True):
+    query = input(">> ")
+
+    if query == "quit":
+        break
+
+    response = query_engine.query(query)
+    print("\n", response, "\n")
