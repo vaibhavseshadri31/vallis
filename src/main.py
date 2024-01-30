@@ -2,6 +2,8 @@ from llama_index import VectorStoreIndex, SimpleDirectoryReader
 import logging
 import sys
 
+# Uncomment these lines for logging
+
 # logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 # logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
