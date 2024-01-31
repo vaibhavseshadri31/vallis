@@ -58,9 +58,19 @@ def get_docs():
     # Get pdf documents
     PDFReader = download_loader("PDFReader")
     loader = PDFReader()
-    pdf_docs = loader.load_data(file=Path('../data/pdf_files/ANN.pdf'))
 
-    for document in pdf_docs:
-        documents.append(document)
+    # load data takes a file at a time, cannot take in a directory
+    directory = '../data/pdf_files'
+
+    # iterate over files in pdf directory
+    for filename in os.listdir(directory):
+        f = os.path.join(directory, filename)
+        # checking if it is a file
+        if os.path.isfile(f):
+            curr_pdf_files = loader.load_data(
+                file=Path(f))
+
+        for pdf in curr_pdf_files:
+            documents.append(pdf)
 
     return documents

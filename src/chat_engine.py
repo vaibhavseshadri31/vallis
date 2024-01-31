@@ -14,7 +14,8 @@ def main():
     new_store = True
 
     chat_mode = input(
-        "What chatmode will you be using today:\n 1) condense_question\n 2) condense_plus_context\n\n >> ")
+        "What chatmode will you be using today:\n 1) condense_question: Your question will be rephrased and passed into the query engine \
+        \n 2) condense_plus_context: Your question will be condensed and relevant documents will be passed into GPT 3.5-turbo\n\n >> ")
 
     chat_engine = create_engine(
         new_store, chat_mode=chat_mode, engine_type="chat")
