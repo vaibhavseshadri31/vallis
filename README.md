@@ -13,19 +13,17 @@
 
 ### For zsh
 
-`echo "export OPENAI_API_KEY='yourkey'" >> ~/.zshrc`
+`echo "export OPENAI_API_KEY='yourkey'" >> ~/.zshrc` <br> 
 `source ~/.zshrc`
 
-<br>
+### For bash
 
-### for bash
-
-`echo "export OPENAI_API_KEY='yourkey'" >> ~/.bash_profile`
+`echo "export OPENAI_API_KEY='yourkey'" >> ~/.bash_profile` <br>
 `source ~/.bash_profile`
 
 <br>
 
-Confirm environment variable with `echo $OPENAI_API_KEY`
+Confirm you have successfully added your API key with `echo $OPENAI_API_KEY`
 
 ## 4. Running code
 
