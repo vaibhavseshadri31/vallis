@@ -1,3 +1,8 @@
+
+# LlamaIndex documentation:
+
+https://docs.llamaindex.ai/en/stable/getting_started/starter_example.html
+
 # Setup:
 
 ## 1. Create and source virtual environment within helios project directory <br>
@@ -30,6 +35,3 @@ Confirm you have successfully added your API key with `echo $OPENAI_API_KEY`
 `cd src` <br>
 `python3 main.py` <br>
 
-# LlamaIndex documentation:
-
-https://docs.llamaindex.ai/en/stable/getting_started/starter_example.html
