@@ -8,32 +8,6 @@ from llama_index import (
     StorageContext,
     load_index_from_storage,
 )
-import logging
-import sys
-
-
-def main():
-    # Uncomment these lines for logging
-
-    # logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
-    # logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
-
-    # set to true to update embeddings in storage
-    new_store = False
-
-    query_engine = create_query_engine(new_store)
-
-    print("\nHelios.ai mentor, type \"quit\" when you are done\n")
-
-    while (True):
-        query = input(">> ")
-
-        if query == "quit":
-            return
-
-        response = query_engine.query(query)
-        response.print_response_stream()
-        print("\n")
 
 
 def create_query_engine(new_store):
@@ -52,10 +26,11 @@ def create_query_engine(new_store):
 
 def get_index(new_store, service_context):
     # check if storage already exists
-    PERSIST_DIR = "../storage"
+    PERSIST_DIR = "../../storage"
     if new_store or not os.path.exists(PERSIST_DIR):
         # load the documents and create the index
-        documents = SimpleDirectoryReader("../data").load_data()
+        documents = SimpleDirectoryReader("../../data").load_data()
+
         index = VectorStoreIndex.from_documents(
             documents, service_context=service_context)
 
@@ -68,7 +43,3 @@ def get_index(new_store, service_context):
         index = load_index_from_storage(storage_context)
 
     return index
-
-
-if __name__ == '__main__':
-    main()
