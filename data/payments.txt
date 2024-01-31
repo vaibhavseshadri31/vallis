@@ -8,3 +8,4 @@ You can sell and accept payments in many currencies, depending on what payment p
 
 What is a merchant account?
 A merchant account is an account where your money is deposited after your customers’ payments have been authorized and processed.
+

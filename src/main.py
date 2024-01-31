@@ -18,7 +18,7 @@ def main():
     # set to true to update embeddings in storage
     new_store = True
 
-    query_engine = create_query_engine(new_store)
+    chat_engine = create_chat_engine(new_store)
 
     print("\nHelios.ai mentor, type \"quit\" when you are done\n")
 
@@ -28,11 +28,12 @@ def main():
         if query == "quit":
             break
 
-        response = query_engine.chat(query)
-        print("\n", response, "\n")
+        response = chat_engine.stream_chat(query)
+        response.print_response_stream()
+        print("\n")
 
 
-def create_query_engine(new_store):
+def create_chat_engine(new_store):
     # check if storage already exists
     PERSIST_DIR = "../storage"
     if new_store or not os.path.exists(PERSIST_DIR):
@@ -48,7 +49,7 @@ def create_query_engine(new_store):
         storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
         index = load_index_from_storage(storage_context)
 
-    return index.as_chat_engine()
+    return index.as_chat_engine(chat_mode="condense_question", verbose=True)
 
 
 if __name__ == '__main__':
