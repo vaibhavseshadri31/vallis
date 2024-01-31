@@ -11,7 +11,21 @@
 
 ## 3. Export environment variable `OPENAI_API_KEY` (store most recent key in API_key.txt)
 
-`export OPENAI_API_KEY=<PUBLIC_KEY>`
+### For zsh
+
+`echo "export OPENAI_API_KEY='yourkey'" >> ~/.zshrc`
+`source ~/.zshrc`
+
+<br>
+
+### for bash
+
+`echo "export OPENAI_API_KEY='yourkey'" >> ~/.bash_profile`
+`source ~/.bash_profile`
+
+<br>
+
+Confirm environment variable with `echo $OPENAI_API_KEY`
 
 ## 4. Running code
 
