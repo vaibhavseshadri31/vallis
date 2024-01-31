@@ -19,9 +19,12 @@ def main():
     # logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
     # set to true to update embeddings in storage
-    new_store = True
+    new_store = False
 
-    chat_engine = create_chat_engine(new_store)
+    chat_mode = input(
+        "What chatmode will you be using today:\n 1) condense_question\n 2) condense_plus_context\n\n >> ")
+
+    chat_engine = create_chat_engine(new_store, chat_mode)
 
     print("\nHelios.ai mentor, type \"quit\" when you are done\n")
 
@@ -29,16 +32,15 @@ def main():
         query = input(">> ")
 
         if query == "quit":
-            break
+            chat_engine.reset()
+            return
 
         response = chat_engine.stream_chat(query)
         response.print_response_stream()
         print("\n")
 
-    chat_engine.reset()
 
-
-def create_chat_engine(new_store):
+def create_chat_engine(new_store, chat_mode):
     # Parse document into chunks according to chunk_size
     service_context = ServiceContext.from_defaults(
         llm=OpenAI(model="gpt-3.5-turbo", temperature=0))
@@ -48,7 +50,7 @@ def create_chat_engine(new_store):
     memory = ChatMemoryBuffer.from_defaults(token_limit=3900)
 
     chat_engine = index.as_chat_engine(
-        chat_mode="condense_plus_context", memory=memory, verbose=False)
+        chat_mode=chat_mode, memory=memory, verbose=True)
 
     return chat_engine
 
