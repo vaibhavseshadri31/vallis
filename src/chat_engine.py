@@ -1,7 +1,7 @@
 import logging
 import sys
 
-from chat_engine import create_chat_engine
+from engine import create_engine
 
 
 def main():
@@ -16,7 +16,8 @@ def main():
     chat_mode = input(
         "What chatmode will you be using today:\n 1) condense_question\n 2) condense_plus_context\n\n >> ")
 
-    chat_engine = create_chat_engine(new_store, chat_mode)
+    chat_engine = create_engine(
+        new_store, chat_mode=chat_mode, engine_type="chat")
 
     print("\nHelios chatbot, type \"quit\" when you are done\n")
 

@@ -1,4 +1,6 @@
 import os.path
+from pathlib import Path
+from llama_index import download_loader
 from llama_index.memory import ChatMemoryBuffer
 from llama_index.llms import OpenAI
 from llama_index import (
@@ -10,7 +12,7 @@ from llama_index import (
 )
 
 
-def create_chat_engine(new_store, chat_mode):
+def create_engine(new_store, chat_mode, engine_type):
     # Parse document into chunks according to chunk_size
     service_context = ServiceContext.from_defaults(
         llm=OpenAI(model="gpt-3.5-turbo", temperature=0))
@@ -19,18 +21,22 @@ def create_chat_engine(new_store, chat_mode):
 
     memory = ChatMemoryBuffer.from_defaults(token_limit=3900)
 
-    chat_engine = index.as_chat_engine(
-        chat_mode=chat_mode, memory=memory, verbose=True)
+    if engine_type == "query":
+        engine = index.as_query_engine(streaming=True)
+    else:
+        engine = index.as_chat_engine(
+            chat_mode=chat_mode, memory=memory, verbose=True)
 
-    return chat_engine
+    return engine
 
 
 def get_index(new_store, service_context):
     # check if storage already exists
-    PERSIST_DIR = "../../storage"
+    PERSIST_DIR = "../storage"
     if new_store or not os.path.exists(PERSIST_DIR):
         # load the documents and create the index
-        documents = SimpleDirectoryReader("../../data").load_data()
+        documents = get_docs()
+
         index = VectorStoreIndex.from_documents(
             documents, service_context=service_context)
 
@@ -43,3 +49,18 @@ def get_index(new_store, service_context):
         index = load_index_from_storage(storage_context)
 
     return index
+
+
+def get_docs():
+    # Get text documents
+    documents = SimpleDirectoryReader("../data/txt_files").load_data()
+
+    # Get pdf documents
+    PDFReader = download_loader("PDFReader")
+    loader = PDFReader()
+    pdf_docs = loader.load_data(file=Path('../data/pdf_files/ANN.pdf'))
+
+    for document in pdf_docs:
+        documents.append(document)
+
+    return documents

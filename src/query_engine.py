@@ -1,7 +1,7 @@
 import logging
 import sys
 
-from query_engine import create_query_engine
+from engine import create_engine
 
 
 def main():
@@ -13,7 +13,8 @@ def main():
     # set to true to update embeddings in storage
     new_store = True
 
-    query_engine = create_query_engine(new_store)
+    query_engine = create_engine(
+        new_store, chat_mode=None, engine_type="query")
 
     print("\nHelios Q&A system, type \"quit\" when you are done\n")
 
