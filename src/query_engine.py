@@ -10,8 +10,11 @@ def main():
     # logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
     # logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
-    # set to true to update embeddings in storage
-    new_store = True
+    # DONT CHANGE UNLESS YOU ADD NEW DOCS
+    # If set to true, all vector embeddings are recomputed (Lot of requests to OpenAI)
+    # --------------------------------------------------------------------------------#
+    new_store = False
+    # --------------------------------------------------------------------------------#
 
     query_engine = create_engine(
         new_store, chat_mode=None, engine_type="query")

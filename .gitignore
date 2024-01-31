@@ -1,4 +1,4 @@
 # Ignore virtual environment
 venv/
-src/chat_engine/__pycache__/
-src/query_engine/__pycache__/
+src/__pycache__/
+
