@@ -6,17 +6,14 @@ from llama_index import (
 )
 
 
-def create_engine(chat_mode, engine_type):
+def create_engine(chat_mode):
 
     index = get_index()
 
     memory = ChatMemoryBuffer.from_defaults(token_limit=3900)
 
-    if engine_type == "query":
-        engine = index.as_query_engine(streaming=True)
-    else:
-        engine = index.as_chat_engine(
-            chat_mode=chat_mode, memory=memory, verbose=True)
+    engine = index.as_chat_engine(
+        chat_mode=chat_mode, memory=memory, verbose=True)
 
     return engine
 
