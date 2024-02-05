@@ -1,0 +1,122 @@
+
+Original page: https://visibilitygurus.com/case-studies/women-shoe-shopify-store-seo/
+-------------------
+
+WOMEN SHOE STORE
+Increased revenue of a Shoe Store to $147,000 in 14 months by
+correcting on-page, off-page, and technical optimization
+Request Store Audit
+OVERVIEW
+Our client’s store is a specialized retailer offering diverse
+footwear for all genders. With an increasing demand for online
+shopping, they decided to expand their reach by launching a Shopify
+website. Despite being successful in the offline market, it faced a
+struggle to get the same level of reputation and recognition in the
+online realm.
+Thus, they contacted Visibility Gurus to get Shopify SEO services for
+their store. We were determined to conquer all the challenges and find
+viable solutions.
+In this case study, we will explore how our services helped the store
+in increasing:
+     Organic Sessions
+     New organic users
+     Organic revenue
+CHALLENGES
+Clarity emerged after conducting a comprehensive SEO audit of the
+store. We identified and acknowledged all the obstacles that were
+impeding the store’s ranking and overall success. These were:
+     INEFFICIENT STORE STRUCTURE: Neglected architecture led to slow
+loading, unresponsive design, confusing navigation, poor URL
+structure, and checkout problems.
+     WEAK ON-PAGE OPTIMIZATION: After an SEO audit, we identified issues
+with on-page optimization, including titles, headings, meta
+descriptions, image alt text (unoptimized) on core landing pages, and
+keyword cannibalization.
+      UNIMPRESSIVE CONTENT: Thin content was confusing Google about the
+context of the store. Also, clear call-to-action (CTAs) were absent,
+and it had an intuitive layout.
+     UNHEALTHY BACKLINK PROFILE: The store was getting lower organic
+traffic because of the weak backlink profile. The links were fewer and
+had low domain authority.
+All these challenges were impacting the Shopify website’s
+functionality, user experience, and search engine rankings. After
+identifying the challenges, it was our turn to showcase our expertise
+in increasing sales for the store.
+SOLUTIONS - OUR APPROACH
+Given the pain points identified, the Visibility Gurus team understood
+that we had our work cut out for us. The site had drawbacks across all
+three major components of SEO. So, we divided our work into three
+segments like:
+     Technical SEO
+     On-Page SEO
+     Off-Page SEO
+TECHNICAL SEO
+To recover our client from all technical issues, the VG team devised a
+plan of action that started with correcting technical or structural
+issues. 
+1. To enhance our client’s web PAGE LOADING SPEED, we used SEO
+auditing tools like Screaming Frog and SEMrush to identify duplicate
+content. We resolved this issue by adding canonical tags to the
+non-preferred pages’ head section.
+Also, conducted Shopify image optimization of the store using image
+formats like WebP and implemented lazy loading. This way, we ensured
+that images loaded only when they were required.
+2. CORRECTING THE LESS RESPONSIVE DESIGN of the store was very
+important to us as it would enhance the user experience and is also
+crucial as per Google’s mobile-first -indexing update.
+So, we verified the store’s mobile-friendliness with Google’s
+Mobile-Friendly Test, fixed identified issues, and enhanced
+readability with shorter paragraphs, bullet points, and headings for
+better accessibility.
+3. To SMOOTHEN THE NAVIGATION, we used a “simple navigation menu”
+Categories were chosen carefully. We placed essential information
+upfront to help users quickly find the details they need before making
+a purchase.
+4. We crafted CLEAN, CONCISE, AND RELEVANT KEYWORDS CONTAINING URLS.
+Generic auto-generated web addresses were removed, and restructured as
+descriptive and relevant to the content.
+One such example is “www.shoestore.com/sneakers.” We made all
+these URLs mobile-friendly as well.
+5. Products were organized using SHOPIFY PRODUCT TAGS. It helped in
+better navigation, organization, and internal linking of the store’s
+products. Optimized anchor texts and smart context links were used for
+linking.
+Also, we ensured an easy checkout process for users. From the
+beginning to the end, we tried our best to correct each and every
+step.
+ON-PAGE SEO
+To accompany the technical efforts, we also worked to improve the
+on-page SEO. The site lacked many factors that were required for
+Google to crawl and also to determine the context and significance of
+the store. We started our work as per mentioned:
+1. Optimizing TITLES AND META DESCRIPTIONS, headings of the product
+pages. Also, added alt text for all the product images to ensure their
+accessibility for the visually impaired and other users.
+2. Addressed KEYWORD CANNIBALIZATION for key commercial and
+product-focused keywords among core landing pages by implementing
+canonical tags, merging similar pages, and removing unwanted ones.
+3. To address THE ISSUE OF THIN CONTENT, we created topic clusters. We
+started writing it in a long format to provide users with full
+information related to the products. It also established Google’s
+EEAT.
+4. To get an INTUITIVE LAYOUT of the Shopify store, we added clear
+call-to-action (CTAs).
+OFF-PAGE SEO
+During the first 6 months, we built around 100 links from relevant
+authoritative fashion sites. We used trustworthy source citations and
+bridged the content to expand. 
+1. We ACQUIRED HIGH-QUALITY BACKLINKS from reputable and relevant
+websites. Guest posting was done to let people know about the store.
+2. We encouraged satisfied customers to leave POSITIVE REVIEWS AND
+TESTIMONIALS on reviews platforms like Google My Business and social
+media. These reviews helped in boosting the trust and credibility of
+the store.
+RESULTS
+It would be fair to say the results were impressive. Working with the
+Shoe Store, we achieved the following results:
+     Organic Sessions:  +120 %
+     Keywords Ranking: Placed 400+ keywords on Page #1
+     Organic revenue: $147,000 in 14 months
+Do You Want to See Huge Changes in Your SEO Performance?
+Join over 30+ startups already growing with Visibility Gurus.
+Talk to Our Experts

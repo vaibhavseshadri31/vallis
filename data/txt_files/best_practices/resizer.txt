@@ -1,0 +1,329 @@
+Original page: https://visibilitygurus.com/blog/shopify-image-resizer/
+-------------------
+
+Skip to main contentSkip to footer
+ Visibility Gurus Logo 
+     Home
+     Services
+     Case Studies
+Services
+     Dropdown link 1
+     Dropdown link 2
+     About
+     Blog
+
+Free AuditLet's Talk
+Shopify SEO
+SHOPIFY IMAGE RESIZER: HOW TO RESIZE IMAGES THE RIGHT WAY
+Navneet Singh
+Updated 7 November, 2023
+ image resizing in shopify stores 
+TABLE OF CONTENTS
+
+In the world of ecommerce, first impressions matter a lot. If your
+product images are not up to par, even high-quality products and
+descriptions won’t attract customers. Luckily, with Shopify’s
+image resizer, you can make your product images shine. 
+We have prepared a comprehensive guide that will help you achieve
+this. By resizing your product images on your Shopify store, you will
+get increased conversions and higher customer satisfaction. So, follow
+this guide closely, and present your products in the best possible
+way.
+THE IMPORTANCE OF RESIZING IMAGES FOR SHOPIFY
+It is crucial to grasp the significance of resizing images for a
+Shopify store before delving into the process. In reality, its
+importance goes well beyond technicalities. Serving as the foundation
+of SEO, user experience (UX), and achieving higher organic rankings,
+image resizing is an essential practice for anyone engaged in the
+digital business.
+Let’s check out why, as a Shopify merchant, you cannot skip it:
+     With Shopify image optimization, you can get a faster and more
+user-friendly site. The presence of better product images will not let
+visitors bounce from your store, and you will get a good ranking on
+SERPs and more organic traffic.
+     When a visitor clicks a site and gets consistent product images
+throughout the store, it creates an impression of professionalism. The
+user perceives the store owners’ commitment to providing better
+service through consistent treatment and intention displayed in the
+form of good visuals. So, if you give something different from usual
+to your customers, it will benefit you for sure.
+     As per a study, 90% of shoppers abandon carts if the site loads
+slowly. It happens when the user is not getting good treatment.
+Specifically, for a shopping store, large-size images negatively
+impact the user experience. To reduce cart abandonment, it becomes
+crucial to optimize images of all the pages of the store.
+     If there are high-quality and relevant images on your site, the user
+will stay longer and engage with your content. This increased user
+engagement can lead to lower bounce rates and higher CTRs, which send
+positive signals to search engines, and these factors contribute to
+the higher ranking of your site.
+These are some reasons you should go for image resizing. But which
+tool would be best to do it? Let’s know in the above segment.
+SHOPIFY’S IMAGE RESIZER TOOL
+Many tools are available in the market, free as well as paid-for image
+resizing. But, it would be better to start with Shopify’s image
+resizer. It is a free online image resizer and optimizer tool launched
+by the platform itself. Just like the name Simple Image Resizer, the
+process of optimizing pictures through it is simple and free. 
+Here are the steps to be followed:
+     Upload the image by either drag and drop method or select from your
+computer.
+     Choose the desired image size.
+     Finally, hit the submit button and get a newly resized image as per
+your choice.
+This is how image optimization can be done. Whether it is JPEG, PNG,
+GIF, JPG, or WEBP, all these file formats are supported by the Simple
+Image Resizer tool.
+WHY SHOPIFY’S SIMPLE IMAGE RESIZER IS A PREMIER CHOICE?
+You need not install any app when you are choosing Shopify’s simple
+image resizer tool. But here are some other reasons that set it apart
+as the premier choice for image resizing:
+     Free Tool.
+     Multiple Applications.
+     Ease of use.
+     Quick with editing.
+     Maintains the quality of the image.
+BENEFITS OF USING SHOPIFY’S SIMPLE IMAGE RESIZER
+The tool offers many benefits. Let’s shed some light on how it
+empowers businesses to present their products in the best way and stay
+competitive in the digital marketplace. 
+     SUPERCHARGING WEBSITE PERFORMANCE: One can expect a faster loading
+site after optimizing images of their store. The user experience can
+be enhanced, which plays a greater role in the success of ecommerce
+business stores.
+     RETAINING IMAGE QUALITY: Shopify’s image resizer tool helps in
+optimizing pictures of any format. Moreover, quality remains
+uncompromised during the optimization process.
+     SEO: Another advantage of optimizing through image resizer by
+Shopify is that it automatically adds alt tags, which helps in the
+optimization of image filenames and improves the SEO of the store.
+     CONSISTENT BRANDING: The presence of consistent product images
+throughout the store creates a visual identity. Thus, consistent
+branding can be easily achieved through the process.
+     BULK RESIZING (MAX OF 6): One can resize the pictures of their store
+in bulk by using a simple image resizer. This saves time and ensures
+consistency throughout the store.
+IMAGE ASPECT RATIO: THE MOST IMPORTANT FACTOR WHILE RESIZING IMAGES
+FOR SHOPIFY
+One crucial aspect you cannot skip while resizing is the Image Aspect
+Ratio. It plays a pivotal role in preserving image quality and
+ensuring a seamless user experience.
+The aspect ratio is basically the proportion between the image width
+and height. You can maintain a professional and polished look for your
+Shopify website by maintaining the same aspect ratio for all your
+product images.
+     To ensure the consistency of your site and make it visually
+pleasing, you can lock the ASPECT RATIO OF AN IMAGE IN HTML. Choose
+the desired “width” and “height’ attributes. However, this
+often leads to stretched or distorted images if not used carefully. It
+would be better if you handle it with CSS.
+     The correct way to set the ASPECT RATIO OF AN IMAGE USING CSS is to
+specify the width and set the height to “auto.” It helps in
+scaling the image proportionally while maintaining the aspect ratio. 
+Here’s the CSS code you can provide:
+    img {
+width: 400px,
+height: auto
+}
+This code will ensure that the image width is fixed at 400 pixels, and
+the height adjusts automatically to maintain the aspect ratio.
+     Another great way to maintain the aspect ratio is by using the
+‘ASPECT-RATIO’ PROPERTY, which is a relatively new CSS property
+that allows the store owner to set the preferred aspect ratio for an
+element.
+ For example:
+Aspect-ratio: 2 / 1
+As per your mentioned command, the aspect ratio will be adjusted.
+But, one thing is to be noted here, your browser should support this
+property. Before proceeding, check the compatibility with the browser
+you intend to support.
+If compared, using CSS to set the aspect ratio is a more flexible and
+reliable approach to using HTML attributes. However, it all depends on
+the browser compatibility when implementing new CSS properties.
+POPULAR IMAGE RESIZER APPS FOR SHOPIFY
+We don’t want your knowledge to be constrained to one tool. As there
+are many popular image-resizing apps available on Shopify with
+advanced customizations and features. Here are the top five: 
+PIXC: PHOTO RESIZE
+It is a Shopify app that automatically resizes product images and
+gives a professional look to the store. Let’s look at its amazing
+FEATURES:
+     There is a bulk image resizer that saves time and effort. 
+     It offers various aspect ratios through advanced resize options. 
+     It provides a backup of the original files, allowing for easy
+restoration.
+PRICE
+$4-$79/ month| Free plan available for trial.
+BULK IMAGE EDIT
+It helps in making all the images of your store the same width and
+height ratio. Let’s read about its amazing FEATURES:
+     Along with resizing, alt text, and file name are updated to
+represent your store name, product name, and product type better.
+     One can add text or image watermarks to protect their product images
+from being stolen by competitors.
+     It resizes product images to a square shape, which is the standard
+size to post on your site and social networks.
+PRICE
+$9.99 to $49.99/month| Free plan available for trial.
+SEO IMAGE OPTIMIZER & RESIZER
+Just like the name, the app is perfect for optimizing images for SEO.
+It can increase the ranking of your store by updating alt tags for
+your store’s images. Have a look at its features:
+     Photo editing, resizing, and compressing all is possible by using
+this single app.
+     Alt tags relevant to your store images will be updated.
+     You can optimize the product images for cross-posting on social
+media channels. 
+PRICE
+$8.95 to $19.95/month|Free plan available for trial.
+PUSHDADDY RESIZE IMAGE
+The app resizes large images into smaller sizes, which allows them to
+be downloaded on mobiles. Here are the features:
+     Automatically resize all your images.
+     Updates Alt tags properly.
+     Large images can be converted and can be downloaded on mobiles
+easily after resizing through it.
+PRICE
+Starting from $0 to $5 per month.
+PLUSIMAGE
+The app lets you resize images as per your design requirements. Either
+square or rectangle, you can resize the image. Here are the features:
+     As per your theme, you can resize product images in any ratio.
+     Bulk SEO Alt tags to your images in every plan.
+     Automatic image optimization and SEO alt text, even for future
+products as per your defined template.
+PRICE
+Starting from $0 to $3.99/month.
+FINDING THE RIGHT SHOPIFY IMAGE RESIZER APP
+Now, you have access to a variety of popular apps. Among these
+options, which one would you select, and what would be the determining
+factor behind your choice? To assist you in making this decision, we
+will explore several ESSENTIAL FACTORS that can guide your selection
+while choosing a Shopify image resizer app.
+> IMAGE QUALITY: When selecting an image resizer app, consider its
+> compression methods. Check if it uses lossless compression or
+> advanced compression algorithms. This will help you obtain a
+> high-quality compressed image.
+> 
+>      EASE OF USE: Certainly, to ensure convenience, go with the
+> user-friendly resizer app, which offers intuitive controls and is
+> easy to navigate.
+> 
+>      FUNCTIONALITY: Look if the app you are going to consider offers
+> batch resizing, watermarking, format conversion, and custom
+> dimensions or not. Such functionality factors help in learning which
+> one would be best to use.
+> 
+>      COMPATIBILITY: The app you are going to use for image resizing has
+> the same features as per your requirements. The factor of
+> compatibility cannot be overlooked while selecting an image resizing
+> app.
+> 
+>      PERFORMANCE AND SPEED: The image resizer tool is fast and
+> performance-oriented or not. It’s necessary to get results, but if
+> it gives results at a low speed, then it is not well worth using.
+> 
+>      INTEGRATION: The app you are going to use for resizing images in
+> your store is integrating with your theme, Shopify version,
+> third-party apps, or plugins. The factor check can help in learning
+> whether the app you have selected goes with your choices or not.
+>      PRICING AND COST: The pricing factor cannot be overlooked while
+> choosing the right app. You will go with the one that is available
+> at a lower price or free of cost. Just look at their specifications
+> and then make your decision.
+RECOMMENDED IMAGE DIMENSIONS FOR SHOPIFY STORES
+Now you know the apps and criteria to select them, but what should be
+the image dimensions to get a resized image? For that, here is the
+section. 
+Here is a table describing the image type and recommended dimensions:
+    IMAGE TYPE
+    RECOMMENDED DIMENSIONS
+    Product images
+    2048 x 2048
+    Shopify logo
+    Up to 450 x 250
+    Featured Promotions
+    840 x 840
+In case you want to know Shopify Image Sizes for all images, click
+here.
+COMMON MISTAKES TO AVOID WHEN RESIZING IMAGES IN SHOPIFY
+We’ve covered important aspects of image resizing, and to ensure
+it’s done right, here we are listing some common mistakes. This way,
+you can avoid distortion of images when resizing in a Shopify store:
+> OVERLY LARGE IMAGES: Images taken from a camera are usually of
+> higher resolution and quality. But, if the same ones are on the
+> website, these will slow down the loading times. So, better
+> customize them before directly uploading from camera or stock
+> photos.
+> 
+>      DISREGARDING THE ASPECT RATIO: Distortion or stretching of an
+> image occurs when the aspect ratio is ignored, which can make your
+> website appear unprofessional and unappealing. Therefore, it’s
+> important to maintain the original aspect ratio when resizing
+> images.
+> 
+>      FORGETTING TO COMPRESS: It is important to compress an image even
+> though you have resized it. As resizing does not always compress
+> images. You are advised to reduce its file size while maintaining
+> acceptable quality.
+> 
+>      NOT SAVING A BACKUP: It is the biggest mistake to lose the
+> original, high-quality version of images after resizing.  But
+> keeping a backup lets you have a high-quality version for future use
+> or modifications.
+> 
+>      INCONSISTENT IMAGE SIZES: The presence of inconsistent images
+> leads to a disjointed and unprofessional appearance on any website.
+> These disrupt the visual appeal in actual terms. So, consistency is
+> the key to maintaining a professional and real scenario. 
+THE BOTTOM LINE
+Conclusively, you are now fully equipped with all the necessary
+details for resizing images on Shopify. In addition to the simple
+image resizer provided by Shopify, you can also explore other tools
+mentioned for resizing images and optimizing media on your store and
+get more sales on Shopify.
+SHOPIFY IMAGE RESIZER FAQS
+     Why is image resizing important for my Shopify store?
+Ans. Larger-sized images take more time to load, i.e., their presence
+can slow down your store’s speed, which would be a poor signal for
+the visitors to your webpage. However, image resizing can give a
+pleasant browsing experience for potential buyers.
+     Can’t I resize images manually before uploading them to Shopify?
+Ans. Yes, you can resize images manually before uploading them to
+Shopify. For this, you will require an image editing tool to optimize
+and resize pictures. You can also prefer simple image resizer by
+Shopify to get the work done.  
+     Are there any specific file format requirements for images in
+Shopify?
+Ans. Primarily, Shopify supports image formats like JPEG, PNG, and
+GIF. However, the maximum file size is 20 MB, and the resolution is 20
+megapixels.
+     What is the best image size for Shopify?
+Ans. It is recommended to use a 2048 2048 pixels sized product image.
+However, specific requirements can also change as per the theme and
+design preferences of your store.
+     How do I enlarge an image in Shopify?
+Ans. You just have to visit the image editor of the platform Shopify.
+As per your requirement, enter the new width and hit the “apply”
+button. When you are done making edits, click save.
+     What does it cost to use the image resizer?
+Ans. The online image resizer tool by Shopify is free. Anyone can use
+it and resize as many photos as they want.
+     What basic editing options are available in the Shopify default
+image resizer tool?
+Ans. One can resize, crop, rotate, flip, apply filters, and adjust the
+brightness and contrast of their pictures using the Shopify default
+image resizer tool.
+     How does Shopify’s image resizer balance image quality and file
+size?
+Ans. Shopify’s image resizer optimizes pictures by reducing
+unnecessary data while retaining acceptable visual quality.
+     Does resizing images reduce quality?
+Ans. Whether you are enlarging or reducing the image size, be sure to
+use suitable algorithms and settings. Doing so will help preserve
+image quality and minimize the likelihood of pixelation.
+Level up your Shopify Business
+Join over 30+ Shopify stores already growing with Visibility Gurus
+Audit My StoreContact the Experts
+Powering Shopify Success through SEO Excellence
+

@@ -1,0 +1,119 @@
+Original page: https://www.thoughtshift.co.uk/shopify-case-study-how-we-built-a-7-figure-niche-ecommerce-store/
+-------------------
+
+SHOPIFY CASE STUDY: HOW WE BUILT A 7 FIGURE NICHE ECOMMERCE STORE
+ 
+Shopify has become a major buzzword, and hundreds of thousands of
+ecommerce stores are switching to it, as well as new entrepreneurs and
+seasoned business owners who are looking for an investment. But
+what’s real and what’s just hype? Wouldn’t it be great to see a
+real shopify case study without fluff?
+I am the CEO of Goldspot Pens, a niche ecommerce store specialising in
+fountain pens and luxury fountain pen brands. I’m going to share
+with you, for the very first time, how we built up our shopify store
+and grew it to over 7 figures.
+HOW WE BUILT OUR SHOPIFY STORE TO MAXIMISE TRAFFIC AND CONVERSIONS.
+Site structure does not get talked about as much as it should in the
+ecommerce space. Having the correct technical SEO implemented into
+your site’s framework is crucial, as well as developing a site that
+gets conversion rates above 2.00%. This can be a demanding technical
+skill involving the engagement of professional marketers and seasoned
+developers
+ Goldspot pen Photo credit: Goldspot
+SEO SITE STRUCTURE
+Having a technically intelligible site structure leads to a better
+understanding of your website by Google, in-turn increasing your
+organic traffic. What is site structure? It’s the way your website
+is organised with URLs, categories, and navigation. Site structure is
+how the different pages on your site are linked together, determining
+how Google bot goes through your site as well as how page rank (link
+authority) spreads to the rest of your site. Typically a good site
+structure for SEO is simple and delineates things into easy
+categories.
+What are the main types of products you sell? For good ecommerce site
+structure, you want to make a silo that goes from the most general
+categories to the more specific product categories and products
+themselves. Use the main product types you sell as the top of the
+silo. For us, this is fountain pens, fountain pen bottled ink,
+notebooks and journals, and pen pouches and cases. Under fountain
+pens, we have hundreds of brands of fountain pens you can easily get
+too and that each acquire thousands of monthly traffic.
+OPTIMISING YOUR SITE FOR CONVERSIONS
+A major advancement in our niche ecommerce store (focused on fountain
+pens) was optimising our site for conversions. We began from step 1,
+ideation. Especially if your site is older, you need to decide if you
+should have a new site developed. This involves re-imagining your
+site, and is something that you can’t easily just hand off to a
+developer. You need to hire a professional designer and work
+one-on-one with them to get your site looking amazing.
+Having a pretty site is just one element of ecommerce conversion
+optimisation. There are many steps you should start proceeding with.
+Begin reviewing which shopify plugins you should buy or try. Review
+your checkout experience to make sure it is optimizing for additional
+purchases and makes the checkout experience as easy as possible. We
+saw a massive improvement by implementing a premium “suggested
+products” after each purchase.
+ESTABLISHING A YOUTUBE CONTENT STRATEGY.
+Another major marketing channel we used for Goldspot Pens was Youtube.
+Youtube fluctuates between niches, but if it is possible to develop a
+coherent content strategy utilising youtube, it’s a no-brainer.
+Youtube is one of the biggest social media platforms right now, and
+it’s organic reach is greater than nearly any of the other platforms
+(as instagram and facebook continue to lower their organic reach in
+preference to their ads). We created a Youtube channel that has
+acquired over 2,700,000 views and over 19,000 subscribers that love
+our Goldspot Pens brand.
+Youtube content is about two things: consistency and valuable content.
+Consistency is simple, you need to be publishing at-least once a week
+for the youtube algorithm to favor your channel. Valuable content for
+your niche is harder to ideate, but it can be done relatively easily.
+You know your niche better than anyone. Discover what they are
+interested in learning about. One good method to do this is to
+research what competitors are doing on Youtube or on their blog. What
+kind of content are your competitors producing? Use this as a start
+and see how to add your unique voice to the mix afterwards.
+GROWING OUR INVENTORY AND ORGANIC TRAFFIC
+One aspect of ecommerce seo that is rarely discussed is growing your
+product inventory to increase traffic. By investing in expanding our
+product catalogue, we increased our organic seo traffic by a
+considerable amount, along with our fountain pen Youtube channel, SEO
+content, and conversion optimisation techniques. You can immensely
+grow your organic traffic by expanding your product catalogue,
+creating new product and category pages that will grow your keywords
+to rank for. Begin by researching category / product page keywords and
+seeing which ones are less competitive but still profitable, and begin
+a list of these category / product pages you want to add to your
+inventory and site so as to increase your SEO. You can use competitor
+analysis to find which keywords competition is using by utilising the
+power of Ahrefs or SEMRush.
+By intelligently growing our inventory, we significantly grew our
+organic traffic and bottom-line revenue. You need to have a
+professional grasp of the products and product categories that people
+buy in your niche. This way you can slowly begin to expand your
+inventory and reach of your Shopify store’s organic traffic.
+ Pens Photo credit: Goldspot
+GROWING OUR BRAND, AUDIENCE, AND EMAIL LIST
+The core of a long-lasting ecommerce brand is building a consistent
+audience of buyers that fall in love with your products. An easy
+marketing KPI for this is keeping track of our returning-users and our
+email list. You have probably heard the phase, ‘the money’s in
+your list,’ and this is definitely the case for our fountain pen and
+fountain pen ink niche we’ve found ourselves in.
+Growing an audience of enthusiastic buyers should be a thought in each
+of your marketing channels, whether that’s Youtube, other social
+medias, advertising, or creating useful SEO content to rank on Google.
+But one of our favorite techniques is email. You should be keeping a
+database of every person’s email who orders a product from you, but,
+even more than this, you should be promoting an opt-in so readers and
+customers can personally input their email address to be subscribed to
+your newsletter. And, after all this, you need good emails to send out
+on a consistent basis. This can be promoting your content from other
+channels, a written content piece just for your email subscribers, or
+deals and coupons for your dedicated buyers!
+Building an audience that loves your product (fountain pens for us),
+and your brand, is one of the best ways to increase your bottom-line
+for everything you do. Although many tasks don’t involve this, such
+as SEO, once you have a solid brand and audience built, the traffic
+you acquire from ecommerce SEO campaigns convert into long-lasting
+buyers that love your brand.
+ 
