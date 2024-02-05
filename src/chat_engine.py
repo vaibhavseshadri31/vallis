@@ -32,8 +32,9 @@ def main():
             chat_engine.reset()
             return
 
-        response = chat_engine.stream_chat(query)
-        response.print_response_stream()
+        print(chat_engine.chat(query))
+        # response = chat_engine.stream_chat(query)
+        # response.print_response_stream()
         print("\n")
 
 

@@ -1,5 +1,11 @@
 import os.path
 from pathlib import Path
+from llama_index.extractors import (
+    TitleExtractor,
+    QuestionsAnsweredExtractor,
+    SummaryExtractor
+)
+from llama_index.node_parser import SentenceSplitter
 from llama_index import download_loader
 from llama_index.memory import ChatMemoryBuffer
 from llama_index.llms import OpenAI
@@ -13,11 +19,8 @@ from llama_index import (
 
 
 def create_engine(new_store, chat_mode, engine_type):
-    # Parse document into chunks according to chunk_size
-    service_context = ServiceContext.from_defaults(
-        llm=OpenAI(model="gpt-3.5-turbo", temperature=0))
 
-    index = get_index(new_store, service_context)
+    index = get_index(new_store)
 
     memory = ChatMemoryBuffer.from_defaults(token_limit=3900)
 
@@ -30,12 +33,14 @@ def create_engine(new_store, chat_mode, engine_type):
     return engine
 
 
-def get_index(new_store, service_context):
+def get_index(new_store):
     # check if storage already exists
     PERSIST_DIR = "../storage"
     if new_store or not os.path.exists(PERSIST_DIR):
         # load the documents and create the index
         documents = get_docs()
+
+        service_context = get_service_context()
 
         index = VectorStoreIndex.from_documents(
             documents, service_context=service_context)
@@ -67,10 +72,33 @@ def get_docs():
         f = os.path.join(directory, filename)
         # checking if it is a file
         if os.path.isfile(f):
-            curr_pdf_files = loader.load_data(
+            curr_pdf = loader.load_data(
                 file=Path(f))
 
-        for pdf in curr_pdf_files:
-            documents.append(pdf)
+        for doc in curr_pdf:
+            documents.append(doc)
 
     return documents
+
+
+# Preprocessing
+def get_service_context():
+
+    llm = OpenAI(model="gpt-3.5-turbo", temperature=0)
+    text_splitter = SentenceSplitter(chunk_size=512, chunk_overlap=10)
+
+    # Extracts a title from first x nodes in document
+    title_extractor = TitleExtractor(nodes=5)
+
+    # Extracts x questions from each node that could be answered
+    qa_extractor = QuestionsAnsweredExtractor(questions=3)
+
+    # Extracts a summary from nodes
+    summary_extractor = SummaryExtractor()
+
+    transformations = [title_extractor, qa_extractor, summary_extractor]
+
+    service_context = ServiceContext.from_defaults(
+        llm=llm, text_splitter=text_splitter, transformations=transformations)
+
+    return service_context
