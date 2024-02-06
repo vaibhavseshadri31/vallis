@@ -1,11 +1,10 @@
-
 # LlamaIndex documentation:
 
 https://docs.llamaindex.ai/en/stable/getting_started/starter_example.html
 
 # Setup:
 
-## 1. Create and source virtual environment within helios project directory <br>
+## 1. Create and source virtual environment within vallis project directory <br>
 
 `python -m venv venv` <br>
 `source venv/bin/activate` (anytime you want to activate virtual environment) <br>
@@ -18,7 +17,7 @@ https://docs.llamaindex.ai/en/stable/getting_started/starter_example.html
 
 ### For zsh
 
-`echo "export OPENAI_API_KEY='yourkey'" >> ~/.zshrc` <br> 
+`echo "export OPENAI_API_KEY='yourkey'" >> ~/.zshrc` <br>
 `source ~/.zshrc`
 
 ### For bash
@@ -34,4 +33,3 @@ Confirm you have successfully added your API key with `echo $OPENAI_API_KEY`
 
 `cd src` <br>
 `python3 main.py` <br>
-
