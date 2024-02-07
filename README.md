@@ -32,9 +32,9 @@ Confirm you have successfully added your API key with `echo $OPENAI_API_KEY` / `
 
 ## 4. Setting up redis for caching:
 
-`pip install redis` <br>
+`pip install redis` <br> <br>
 Make sure docker desktop is opened and create a new container: <br>
-`docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest` <br>
+`docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest` <br> <br>
 The first time you build the index it will take a lot of time (mostly due to preprocessing of nodes). Subsequent calls will use the redis cache <br>
 
 ## 5. Building the index:
