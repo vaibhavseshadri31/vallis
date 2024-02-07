@@ -1,24 +1,7 @@
 Original page: https://visibilitygurus.com/blog/shopify-speed-optimization/
 -------------------
 
-Skip to main contentSkip to footer
- Visibility Gurus Logo 
-     Home
-     Services
-     Case Studies
-Services
-     Dropdown link 1
-     Dropdown link 2
-     About
-     Blog
-
-Free AuditLet's Talk
-Shopify SEO
 MASTERING SHOPIFY SPEED OPTIMIZATION: BEST PRACTICES AND TECHNIQUES
-Navneet Singh
-Updated 10 November, 2023
- shopify speed optimization 
-TABLE OF CONTENTS
 
 For every second it takes your website to load, you risk losing 7% of
 your revenue (Search Engine Journal). Also, Google likes fast websites

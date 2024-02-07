@@ -4,6 +4,7 @@ from llama_index import (
     StorageContext,
     load_index_from_storage,
 )
+from llama_index.response_synthesizers import get_response_synthesizer
 
 
 def create_engine(chat_mode):
@@ -12,8 +13,11 @@ def create_engine(chat_mode):
 
     memory = ChatMemoryBuffer.from_defaults(token_limit=3900)
 
+    response_synthesizer = get_response_synthesizer(
+        response_mode="tree_summarize")
+
     engine = index.as_chat_engine(
-        chat_mode=chat_mode, memory=memory, verbose=True)
+        chat_mode=chat_mode, memory=memory, verbose=True, response_synthesizer=response_synthesizer)
 
     return engine
 

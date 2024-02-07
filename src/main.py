@@ -3,6 +3,8 @@ import sys
 from llama_index.response.notebook_utils import display_source_node
 from engine import create_engine
 
+import torch
+
 
 def main():
     # Uncomment these lines for logging
@@ -24,8 +26,9 @@ def main():
         # print(chat_engine.chat(query))
         response = chat_engine.stream_chat(query)
         response.print_response_stream()
+        print("\n")
         for n in response.source_nodes:
-            print(len(n.get_content()))
+            print(n.metadata)
         print("\n")
 
 

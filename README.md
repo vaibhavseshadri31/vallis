@@ -13,7 +13,7 @@ https://docs.llamaindex.ai/en/stable/getting_started/starter_example.html
 
 `pip install llama-index`
 
-## 3. Export environment variable `OPENAI_API_KEY` (store most recent key in API_key.txt)
+## 3. Export environment variable `OPENAI_API_KEY` and `REPLICATE_API_TOKEN` (store most recent key in API_key.txt)
 
 ### For zsh
 
@@ -27,9 +27,22 @@ https://docs.llamaindex.ai/en/stable/getting_started/starter_example.html
 
 <br>
 
-Confirm you have successfully added your API key with `echo $OPENAI_API_KEY`
+Repeat steps for `REPLICATE_API_TOKEN` <br>
+Confirm you have successfully added your API key with `echo $OPENAI_API_KEY` / `echo $REPLICATE_API_TOKEN`
 
-## 4. Running code
+## 4. Setting up redis for caching:
+
+`pip install redis` <br>
+Make sure docker desktop is opened and create a new container: <br>
+`docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest` <br>
+The first time you build the index it will take a lot of time (mostly due to preprocessing of nodes). Subsequent calls will use the redis cache <br>
+
+## 5. Building the index:
+
+`cd index` <br>
+`python3 build_index.py` <br>
+
+## 6. Running entire pipeline
 
 `cd src` <br>
 `python3 main.py` <br>
