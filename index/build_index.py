@@ -29,7 +29,14 @@ def build_index():
     PERSIST_DIR = "../storage"
     start = time.time()
     # create nodes and index
-    index = VectorStoreIndex(get_nodes())
+    nodes = get_nodes()
+
+    for node in nodes:
+        node.excluded_embed_metadata_keys = [
+            "url", "file_path", "file_name", "file_type", "file_size", "creation_date", "last_modified_date", "last_accessed_date"]
+        print(node.get_content(metadata_mode=MetadataMode.EMBED))
+
+    index = VectorStoreIndex(nodes)
     end = time.time()
 
     print("Build time: ", end-start)
@@ -38,13 +45,29 @@ def build_index():
     index.storage_context.persist(persist_dir=PERSIST_DIR)
 
 
-def get_nodes():
+def get_docs():
     # Get text documents
     documents = SimpleDirectoryReader(
         "../data/txt_files/best_practices").load_data()
 
     for doc in SimpleDirectoryReader("../data/txt_files/case_studies").load_data():
         documents.append(doc)
+
+    for doc in documents:
+        content = doc.get_content()
+        start_index_url = content.find("https://")
+        end_index_url = content.find("\n", start_index_url)
+        url = content[start_index_url: end_index_url]
+        doc.metadata.update({"url": url})
+
+        doc.excluded_embed_metadata_keys = [
+            "file_path", "file_name", "file_type", "file_size", "creation_date", "last_modified_date", "last_accessed_date"]
+
+    return documents
+
+
+def get_nodes():
+    documents = get_docs()
 
     pipeline = create_ingestion_pipeline()
 
@@ -78,7 +101,7 @@ def create_ingestion_pipeline():
             SummaryExtractor(
                 summaries=["prev", "self", "next"], llm=llm),
             KeywordExtractor(keywords=10, llm=llm),
-            EntityExtractor(prediction_threshold=0.5, llm=llm)
+            # EntityExtractor(prediction_threshold=0.5, llm=llm)
         ], cache=ingest_cache
     )
 

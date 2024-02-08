@@ -1,9 +1,10 @@
-
 from llama_index.memory import ChatMemoryBuffer
 from llama_index import (
     StorageContext,
+    ServiceContext,
     load_index_from_storage,
 )
+from llama_index.llms import Replicate
 from llama_index.response_synthesizers import get_response_synthesizer
 
 
@@ -30,3 +31,12 @@ def get_index():
     index = load_index_from_storage(storage_context)
 
     return index
+
+
+def get_open_source_llm():
+    llm = Replicate(
+        model="meta/llama-2-70b-chat:2796ee9483c3fd7aa2e171d38f4ca12251a30609463dcfd4cd76703f22e96cdf",
+        is_chat_model=True,
+        additional_kwargs={"max_new_tokens": 512})
+
+    return llm

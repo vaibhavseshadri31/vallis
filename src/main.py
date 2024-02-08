@@ -1,9 +1,6 @@
 import logging
 import sys
-from llama_index.response.notebook_utils import display_source_node
 from engine import create_engine
-
-import torch
 
 
 def main():
@@ -26,10 +23,15 @@ def main():
         # print(chat_engine.chat(query))
         response = chat_engine.stream_chat(query)
         response.print_response_stream()
-        print("\n")
+
+        url_set = set()
         for n in response.source_nodes:
-            print(n.metadata)
+            url_set.add(n.metadata["url"])
+
         print("\n")
+        print("Here are some useful links regarding your query:\n")
+        for url in url_set:
+            print(url)
 
 
 if __name__ == '__main__':
