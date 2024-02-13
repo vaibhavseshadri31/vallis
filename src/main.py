@@ -11,7 +11,7 @@ def main():
 
     chat_engine = create_engine(chat_mode="condense_plus_context")
 
-    print("\nVallisAI virtual mentor, type \"quit\" when you are done\n")
+    print("\nHi there! My name is Phil, your AI mentor created by vallis. Type \"quit\" when you are done\n")
 
     while (True):
         query = input(">> ")
