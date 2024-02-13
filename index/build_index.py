@@ -1,6 +1,5 @@
 import time
 import torch
-
 from llama_index.llms import Replicate
 from llama_index.extractors import (
     TitleExtractor,
@@ -24,13 +23,14 @@ from llama_index.ingestion.cache import RedisCache, IngestionCache
 
 
 # Expensive ass function, try not to run too much (only if we add new docs or want to change up preprocessing strategy)
-# Add cache and parallel processing
+# Add parallel processing
 def build_index():
     PERSIST_DIR = "../storage"
     start = time.time()
     # create nodes and index
     nodes = get_nodes()
 
+    # exclude certain metadata keys from being seen by LLM
     for node in nodes:
         node.excluded_embed_metadata_keys = [
             "url", "file_path", "file_name", "file_type", "file_size", "creation_date", "last_modified_date", "last_accessed_date"]
@@ -54,6 +54,7 @@ def get_docs():
         documents.append(doc)
 
     for doc in documents:
+        # extract url from doc
         content = doc.get_content()
         start_index_url = content.find("https://")
         end_index_url = content.find("\n", start_index_url)
@@ -83,7 +84,7 @@ def create_ingestion_pipeline():
 
     embed_model = OpenAIEmbedding()
 
-    llm = OpenAI(model="gpt-3.5-turbo", temperature=0)
+    llm = OpenAI(model="gpt-3.5-turbo-instruct", temperature=0)
 
     ingest_cache = IngestionCache(
         cache=RedisCache.from_host_and_port(host="127.0.0.1", port=6379),
@@ -97,7 +98,7 @@ def create_ingestion_pipeline():
             SemanticSplitterNodeParser(embed_model=embed_model, llm=llm),
             TitleExtractor(llm=llm),
             QuestionsAnsweredExtractor(
-                questions=3, metadata_mode=MetadataMode.EMBED, llm=llm),
+                questions=5, metadata_mode=MetadataMode.EMBED, llm=llm),
             SummaryExtractor(
                 summaries=["prev", "self", "next"], llm=llm),
             KeywordExtractor(keywords=10, llm=llm),

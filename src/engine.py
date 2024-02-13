@@ -1,7 +1,6 @@
 from llama_index.llms import ChatMessage, MessageRole
-from llama_index.chat_engine.condense_question import (
-    CondenseQuestionChatEngine,
-)
+from llama_index.retrievers import VectorIndexRetriever
+from llama_index.postprocessor import SimilarityPostprocessor
 from llama_index.memory import ChatMemoryBuffer
 from llama_index import (
     StorageContext,
@@ -71,14 +70,21 @@ def build_chat_engine(index, user_context):
         ChatMessage(role=MessageRole.ASSISTANT, content="Okay, sounds good."),
     ]
 
+    # configure retriever
+    retriever = VectorIndexRetriever(
+        index=index,
+        similarity_top_k=2,
+    )
+
     query_engine = index.as_query_engine()
-    retriever = index.as_retriever()
+    retriever = retriever
     chat_engine = CondensePlusContextChatEngine.from_defaults(
         query_engine=query_engine,
         retriever=retriever,
         condense_question_prompt=custom_prompt,
         chat_history=custom_chat_history,
-        verbose=False,
+        node_postprocessors=[SimilarityPostprocessor(similarity_cutoff=0.7)],
+        verbose=True,
     )
 
     return chat_engine
