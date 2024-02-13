@@ -1,3 +1,7 @@
+from llama_index.llms import ChatMessage, MessageRole
+from llama_index.chat_engine.condense_question import (
+    CondenseQuestionChatEngine,
+)
 from llama_index.memory import ChatMemoryBuffer
 from llama_index import (
     StorageContext,
@@ -7,6 +11,12 @@ from llama_index import (
 from llama_index.llms import Replicate
 from llama_index.response_synthesizers import get_response_synthesizer
 
+from llama_index.prompts import PromptTemplate
+from llama_index.llms import ChatMessage, MessageRole
+from llama_index.chat_engine.condense_plus_context import (
+    CondensePlusContextChatEngine,
+)
+
 
 def create_engine(chat_mode):
 
@@ -15,10 +25,11 @@ def create_engine(chat_mode):
     memory = ChatMemoryBuffer.from_defaults(token_limit=3900)
 
     response_synthesizer = get_response_synthesizer(
-        response_mode="tree_summarize")
+        response_mode="refine")
 
-    engine = index.as_chat_engine(
-        chat_mode=chat_mode, memory=memory, verbose=True, response_synthesizer=response_synthesizer)
+    engine = build_chat_engine(index)
+    # engine = index.as_chat_engine(
+    #     chat_mode=chat_mode, memory=memory, verbose=True, response_synthesizer=response_synthesizer)
 
     return engine
 
@@ -31,6 +42,48 @@ def get_index():
     index = load_index_from_storage(storage_context)
 
     return index
+
+
+def build_chat_engine(index):
+
+    custom_prompt = PromptTemplate(
+        """\
+    Given a conversation (between Human and Assistant) and a follow up message from Human, \
+    rewrite the message to be a standalone question that captures all relevant context \
+    from the conversation.
+
+    <Chat History>
+    {chat_history}
+
+    <Follow Up Message>
+    {question}
+
+    <Standalone question>
+    """
+    )
+
+    # list of `ChatMessage` objects
+    user_context = "My name is Vaibhav, I have a store that sells sunglasses. We have around 10 customers right now and my biggest struggle is that\
+        I am unable to find ways to promote my product"
+    custom_chat_history = [
+        ChatMessage(
+            role=MessageRole.USER,
+            content=user_context
+        ),
+        ChatMessage(role=MessageRole.ASSISTANT, content="Okay, sounds good."),
+    ]
+
+    query_engine = index.as_query_engine()
+    retriever = index.as_retriever()
+    chat_engine = CondensePlusContextChatEngine.from_defaults(
+        query_engine=query_engine,
+        retriever=retriever,
+        condense_question_prompt=custom_prompt,
+        chat_history=custom_chat_history,
+        verbose=True,
+    )
+
+    return chat_engine
 
 
 def get_open_source_llm():

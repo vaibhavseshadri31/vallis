@@ -26,4 +26,4 @@ with open("../data/urls.txt") as file:
         curr_url = url.rstrip()
         out_file = "../data/txt_files/%s.txt" % (curr_url)
         print(out_file)
-        Web2Text(curr_url, "../data/txt_files/visibility_gurus.txt")
+        Web2Text(curr_url, out_file)
