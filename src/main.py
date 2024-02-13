@@ -9,12 +9,15 @@ def main():
     # logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
     # logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
-    chat_engine = create_engine(chat_mode="condense_plus_context")
-
-    print("\nHi there! My name is Phil, your AI mentor created by vallis. Type \"quit\" when you are done\n")
+    print("\nHi there! My name is Phil, your AI mentor created by vallis. Before we start tell me a bit about yourself and your company \n")
+    print("Type \"quit\" when you are done\n")
+    user_context = input(">> ")
+    print("\nIts a pleasure to meet you! How can I help you?\n")
+    chat_engine = create_engine(user_context=user_context)
 
     while (True):
         query = input(">> ")
+        print("\n")
 
         if query == "quit":
             chat_engine.reset()
@@ -32,6 +35,7 @@ def main():
         print("Here are some useful links regarding your query:\n")
         for url in url_set:
             print(url)
+        print("\n")
 
 
 if __name__ == '__main__':

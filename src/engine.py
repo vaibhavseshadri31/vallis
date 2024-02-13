@@ -18,16 +18,16 @@ from llama_index.chat_engine.condense_plus_context import (
 )
 
 
-def create_engine(chat_mode):
+def create_engine(user_context):
 
     index = get_index()
 
     memory = ChatMemoryBuffer.from_defaults(token_limit=3900)
 
-    response_synthesizer = get_response_synthesizer(
-        response_mode="refine")
+    # response_synthesizer = get_response_synthesizer(
+    #     response_mode="refine")
 
-    engine = build_chat_engine(index)
+    engine = build_chat_engine(index, user_context)
     # engine = index.as_chat_engine(
     #     chat_mode=chat_mode, memory=memory, verbose=True, response_synthesizer=response_synthesizer)
 
@@ -44,7 +44,7 @@ def get_index():
     return index
 
 
-def build_chat_engine(index):
+def build_chat_engine(index, user_context):
 
     custom_prompt = PromptTemplate(
         """\
@@ -63,8 +63,6 @@ def build_chat_engine(index):
     )
 
     # list of `ChatMessage` objects
-    user_context = "My name is Vaibhav, I have a store that sells sunglasses. We have around 10 customers right now and my biggest struggle is that\
-        I am unable to find ways to promote my product"
     custom_chat_history = [
         ChatMessage(
             role=MessageRole.USER,
@@ -80,7 +78,7 @@ def build_chat_engine(index):
         retriever=retriever,
         condense_question_prompt=custom_prompt,
         chat_history=custom_chat_history,
-        verbose=True,
+        verbose=False,
     )
 
     return chat_engine
