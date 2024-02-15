@@ -1,16 +1,12 @@
 from llama_index.llms import ChatMessage, MessageRole
 from llama_index.retrievers import VectorIndexRetriever
 from llama_index.postprocessor import SimilarityPostprocessor
-from llama_index.memory import ChatMemoryBuffer
 from llama_index import (
     StorageContext,
-    ServiceContext,
     load_index_from_storage,
 )
 from llama_index.llms import Replicate
-from llama_index.response_synthesizers import get_response_synthesizer
 
-from llama_index.prompts import PromptTemplate
 from llama_index.llms import ChatMessage, MessageRole
 from llama_index.chat_engine.condense_plus_context import (
     CondensePlusContextChatEngine,
@@ -20,8 +16,6 @@ from llama_index.chat_engine.condense_plus_context import (
 def create_engine(user_context):
 
     index = get_index()
-
-    memory = ChatMemoryBuffer.from_defaults(token_limit=3900)
 
     # response_synthesizer = get_response_synthesizer(
     #     response_mode="refine")
@@ -37,6 +31,7 @@ def get_index():
 
     PERSIST_DIR = "../storage"
 
+    # Pull index from disk
     storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
     index = load_index_from_storage(storage_context)
 
@@ -45,6 +40,7 @@ def get_index():
 
 def build_chat_engine(index, user_context):
 
+    # Define how prompts are generated
     custom_prompt = """\
     Given a conversation (between Human and Assistant) and a follow up message from Human, \
     rewrite the message to be a standalone question that captures all relevant context \
@@ -57,7 +53,7 @@ def build_chat_engine(index, user_context):
     {question}
 
     <Standalone question>
-    """ + " Use this user context to create prompts " + user_context
+    """ + f" Use this user context to create prompts {user_context}"
 
     # list of `ChatMessage` objects
     custom_chat_history = [

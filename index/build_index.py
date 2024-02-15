@@ -14,7 +14,6 @@ from llama_index.node_parser import (
 from llama_index.llms import OpenAI
 from llama_index import (
     VectorStoreIndex,
-    ServiceContext,
     SimpleDirectoryReader
 )
 from llama_index.embeddings import OpenAIEmbedding
@@ -72,6 +71,7 @@ def get_nodes():
 
     pipeline = create_ingestion_pipeline()
 
+    # Run ingestion pipeline with specified transformations
     nodes = pipeline.run(documents=documents)
 
     return nodes
