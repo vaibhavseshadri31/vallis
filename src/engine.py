@@ -84,7 +84,7 @@ def build_chat_engine(index, user_context):
         condense_question_prompt=custom_prompt,
         chat_history=custom_chat_history,
         node_postprocessors=[SimilarityPostprocessor(similarity_cutoff=0.7)],
-        verbose=True,
+        verbose=False,
     )
 
     return chat_engine
