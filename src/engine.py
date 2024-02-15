@@ -28,7 +28,7 @@ def create_engine(user_context):
 
     engine = build_chat_engine(index, user_context)
     # engine = index.as_chat_engine(
-    #     chat_mode=chat_mode, memory=memory, verbose=True, response_synthesizer=response_synthesizer)
+    # chat_mode="condense_plus_context", memory=memory, verbose=True)
 
     return engine
 
@@ -45,8 +45,7 @@ def get_index():
 
 def build_chat_engine(index, user_context):
 
-    custom_prompt = PromptTemplate(
-        """\
+    custom_prompt = """\
     Given a conversation (between Human and Assistant) and a follow up message from Human, \
     rewrite the message to be a standalone question that captures all relevant context \
     from the conversation.
@@ -58,8 +57,7 @@ def build_chat_engine(index, user_context):
     {question}
 
     <Standalone question>
-    """
-    )
+    """ + " Use this user context to create prompts " + user_context
 
     # list of `ChatMessage` objects
     custom_chat_history = [
@@ -81,10 +79,10 @@ def build_chat_engine(index, user_context):
     chat_engine = CondensePlusContextChatEngine.from_defaults(
         query_engine=query_engine,
         retriever=retriever,
-        condense_question_prompt=custom_prompt,
+        condense_prompt=custom_prompt,
         chat_history=custom_chat_history,
         node_postprocessors=[SimilarityPostprocessor(similarity_cutoff=0.7)],
-        verbose=False,
+        verbose=True,
     )
 
     return chat_engine
