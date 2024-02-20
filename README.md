@@ -30,7 +30,7 @@ https://docs.llamaindex.ai/en/stable/getting_started/starter_example.html
 Repeat steps for `REPLICATE_API_TOKEN` <br>
 Confirm you have successfully added your API key with `echo $OPENAI_API_KEY` / `echo $REPLICATE_API_TOKEN`
 
-## 4. Setting up redis for caching:
+## 4. Setting up redis for caching (Only important for building index):
 
 `pip install redis` <br> <br>
 Make sure docker desktop is opened and create a new container with the following command: <br>

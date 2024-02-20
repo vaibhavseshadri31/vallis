@@ -1,24 +1,24 @@
 import time
 import torch
-from llama_index.llms import Replicate
-from llama_index.extractors import (
+from llama_index.core.llms import Replicate
+from llama_index.core.extractors import (
     TitleExtractor,
     QuestionsAnsweredExtractor,
     SummaryExtractor,
     KeywordExtractor,
     EntityExtractor
 )
-from llama_index.schema import MetadataMode
-from llama_index.node_parser import (
+from llama_index.core.schema import MetadataMode
+from llama_index.core.node_parser import (
     SentenceSplitter, SemanticSplitterNodeParser)
-from llama_index.llms import OpenAI
+from llama_index.core.llms import OpenAI
 from llama_index import (
     VectorStoreIndex,
     SimpleDirectoryReader
 )
-from llama_index.embeddings import OpenAIEmbedding
-from llama_index.ingestion import IngestionPipeline
-from llama_index.ingestion.cache import RedisCache, IngestionCache
+from llama_index.core.embeddings import OpenAIEmbedding
+from llama_index.core.ingestion import IngestionPipeline
+from llama_index.core.ingestion.cache import RedisCache, IngestionCache
 
 
 # Expensive ass function, try not to run too much (only if we add new docs or want to change up preprocessing strategy)

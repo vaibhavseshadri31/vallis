@@ -1,16 +1,14 @@
-from llama_index.llms import ChatMessage, MessageRole
-from llama_index.retrievers import VectorIndexRetriever
-from llama_index.postprocessor import SimilarityPostprocessor
-from llama_index import (
+from llama_index.core.llms import ChatMessage, MessageRole
+from llama_index.core.retrievers import VectorIndexRetriever
+from llama_index.core.postprocessor import SimilarityPostprocessor
+from llama_index.core import (
     StorageContext,
     load_index_from_storage,
 )
-from llama_index.llms import Replicate
-
-from llama_index.llms import ChatMessage, MessageRole
-from llama_index.chat_engine.condense_plus_context import (
+from llama_index.core.chat_engine.condense_plus_context import (
     CondensePlusContextChatEngine,
 )
+from llama_index.llms import ollama
 
 
 def create_engine(user_context):
@@ -85,9 +83,6 @@ def build_chat_engine(index, user_context):
 
 
 def get_open_source_llm():
-    llm = Replicate(
-        model="meta/llama-2-70b-chat:2796ee9483c3fd7aa2e171d38f4ca12251a30609463dcfd4cd76703f22e96cdf",
-        is_chat_model=True,
-        additional_kwargs={"max_new_tokens": 512})
+    llm = ollama(model="mistral")
 
     return llm
