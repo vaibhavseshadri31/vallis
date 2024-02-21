@@ -1,4 +1,5 @@
 from llama_index.core.llms import ChatMessage, MessageRole
+from llama_index.core.indices.base import BaseIndex
 from llama_index.core.retrievers import VectorIndexRetriever
 from llama_index.core.postprocessor import SimilarityPostprocessor
 from llama_index.core import (
@@ -8,35 +9,33 @@ from llama_index.core import (
 from llama_index.core.chat_engine.condense_plus_context import (
     CondensePlusContextChatEngine,
 )
-from llama_index.llms import ollama
+# from llama_index.llms import ollama
 
 
-def create_engine(user_context):
+def create_engine(user_context: str, storage_dir: str) -> CondensePlusContextChatEngine:
 
-    index = get_index()
+    index = get_index(storage_dir=storage_dir)
 
     # response_synthesizer = get_response_synthesizer(
     #     response_mode="refine")
 
-    engine = build_chat_engine(index, user_context)
+    engine = build_chat_engine(index=index, user_context=user_context)
     # engine = index.as_chat_engine(
     # chat_mode="condense_plus_context", memory=memory, verbose=True)
 
     return engine
 
 
-def get_index():
-
-    PERSIST_DIR = "../storage"
+def get_index(storage_dir: str) -> BaseIndex:
 
     # Pull index from disk
-    storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
-    index = load_index_from_storage(storage_context)
+    storage_context = StorageContext.from_defaults(persist_dir=storage_dir)
+    index = load_index_from_storage(storage_context=storage_context)
 
     return index
 
 
-def build_chat_engine(index, user_context):
+def build_chat_engine(index: BaseIndex, user_context: str) -> CondensePlusContextChatEngine:
 
     # Define how prompts are generated
     custom_prompt = """\
@@ -69,7 +68,6 @@ def build_chat_engine(index, user_context):
     )
 
     query_engine = index.as_query_engine()
-    retriever = retriever
     chat_engine = CondensePlusContextChatEngine.from_defaults(
         query_engine=query_engine,
         retriever=retriever,
@@ -80,9 +78,3 @@ def build_chat_engine(index, user_context):
     )
 
     return chat_engine
-
-
-def get_open_source_llm():
-    llm = ollama(model="mistral")
-
-    return llm

@@ -1,6 +1,10 @@
 import logging
 import sys
 from engine import create_engine
+from llama_index.core import ServiceContext
+# from llama_index.llms.ollama import Ollama
+from llama_index.llms.openai import OpenAI
+from llama_index.core.settings import Settings
 
 
 def main():
@@ -13,7 +17,12 @@ def main():
     print("Type \"quit\" when you are done\n")
     user_context = input(">> ")
     print("\nIts a pleasure to meet you! How can I help you?\n")
-    chat_engine = create_engine(user_context=user_context)
+
+    Settings.llm = OpenAI()
+    # Settings.llm = Ollama(model="mistral", request_timeout=120)
+
+    chat_engine = create_engine(
+        user_context=user_context, storage_dir="../storage")
 
     while (True):
         query = input(">> ")

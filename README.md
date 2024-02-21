@@ -13,7 +13,7 @@ https://docs.llamaindex.ai/en/stable/getting_started/starter_example.html
 
 `pip install llama-index`
 
-## 3. Export environment variable `OPENAI_API_KEY` and `REPLICATE_API_TOKEN` (store most recent key in API_key.txt)
+## 3. Export environment variable `OPENAI_API_KEY` and `REPLICATE_API_TOKEN` (Ask Vaibhav)
 
 ### For zsh
 
@@ -27,8 +27,7 @@ https://docs.llamaindex.ai/en/stable/getting_started/starter_example.html
 
 <br>
 
-Repeat steps for `REPLICATE_API_TOKEN` <br>
-Confirm you have successfully added your API key with `echo $OPENAI_API_KEY` / `echo $REPLICATE_API_TOKEN`
+Confirm you have successfully added your API key with `echo $OPENAI_API_KEY`
 
 ## 4. Setting up redis for caching (Only important for building index):
 
