@@ -1,24 +1,23 @@
 import time
 import torch
-from llama_index.core.llms import Replicate
 from llama_index.core.extractors import (
     TitleExtractor,
     QuestionsAnsweredExtractor,
     SummaryExtractor,
-    KeywordExtractor,
-    EntityExtractor
+    KeywordExtractor
 )
 from llama_index.core.schema import MetadataMode
 from llama_index.core.node_parser import (
     SentenceSplitter, SemanticSplitterNodeParser)
-from llama_index.core.llms import OpenAI
-from llama_index import (
+from llama_index.llms.openai import OpenAI
+from llama_index.core import (
     VectorStoreIndex,
     SimpleDirectoryReader
 )
-from llama_index.core.embeddings import OpenAIEmbedding
+from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.core.ingestion import IngestionPipeline
-from llama_index.core.ingestion.cache import RedisCache, IngestionCache
+from llama_index.core.ingestion.cache import IngestionCache
+from llama_index.storage.kvstore.redis import RedisKVStore as RedisCache
 
 
 # Expensive ass function, try not to run too much (only if we add new docs or want to change up preprocessing strategy)
@@ -33,7 +32,7 @@ def build_index():
     for node in nodes:
         node.excluded_embed_metadata_keys = [
             "url", "file_path", "file_name", "file_type", "file_size", "creation_date", "last_modified_date", "last_accessed_date"]
-        print(node.get_content(metadata_mode=MetadataMode.EMBED))
+        # print(node.get_content(metadata_mode=MetadataMode.EMBED))
 
     index = VectorStoreIndex(nodes)
     end = time.time()
@@ -50,6 +49,9 @@ def get_docs():
         "../data/txt_files/best_practices").load_data()
 
     for doc in SimpleDirectoryReader("../data/txt_files/case_studies").load_data():
+        documents.append(doc)
+
+    for doc in SimpleDirectoryReader("../data/txt_files/blogs").load_data():
         documents.append(doc)
 
     for doc in documents:
@@ -84,7 +86,7 @@ def create_ingestion_pipeline():
 
     embed_model = OpenAIEmbedding()
 
-    llm = OpenAI(model="gpt-3.5-turbo-instruct", temperature=0)
+    llm = OpenAI(model="gpt-3.5-turbo", temperature=0)
 
     ingest_cache = IngestionCache(
         cache=RedisCache.from_host_and_port(host="127.0.0.1", port=6379),
@@ -96,7 +98,7 @@ def create_ingestion_pipeline():
     pipeline = IngestionPipeline(
         transformations=[
             SemanticSplitterNodeParser(embed_model=embed_model, llm=llm),
-            TitleExtractor(llm=llm),
+            TitleExtractor(llm=llm, embed_model=embed_model, nodes=3),
             QuestionsAnsweredExtractor(
                 questions=5, metadata_mode=MetadataMode.EMBED, llm=llm),
             SummaryExtractor(

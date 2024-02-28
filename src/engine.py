@@ -15,7 +15,6 @@ from llama_index.core.chat_engine.condense_plus_context import (
 def create_engine(user_context: str, storage_dir: str) -> CondensePlusContextChatEngine:
 
     index = get_index(storage_dir=storage_dir)
-
     # response_synthesizer = get_response_synthesizer(
     #     response_mode="refine")
 

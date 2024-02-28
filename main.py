@@ -11,6 +11,7 @@ user_context = " "
 
 @app.route("/")
 def home():
+
     dummy_times = [
         datetime.datetime(2018, 1, 1, 10, 0, 0),
         datetime.datetime(2018, 1, 2, 10, 30, 0),
@@ -34,14 +35,15 @@ def store_user_data():
 
 @app.route("/query", methods=["GET"])
 def query_index():
+
     query_text = request.args.get("text", None)
     if query_text is None:
         return (
             "No text found, please include a ?text=blah parameter in the URL",
             400,
         )
-    global user_context
-    print(user_context)
+
+    user_context = "my name is vab"
     if user_context == " ":
         return ("No user context found, please include a user context at /user_data",
                 400,
@@ -49,7 +51,9 @@ def query_index():
 
     chat_engine = create_engine(
         user_context=user_context, storage_dir="./storage")
+
     response = chat_engine.chat(query_text)
+
     return str(response), 200
 
 
