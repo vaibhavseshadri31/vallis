@@ -1,18 +1,43 @@
-
-<html>
-    <head>
-      <title>Vallis</title>
-      <script src="{{ url_for('static', filename='script.js') }}"></script>
-      <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    </head>
-    <body>
-    
-      <h1>Vallis</h1>
-    
-      <h2>Last 10 visits</h2>
-      {% for time in times %}
-        <p>{{ time }}</p>
-      {% endfor %}
-    
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vallis - Virtual Shopify Assistant</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Welcome to Vallis!</h1>
+            <p>Your next-generation Virtual Shopify Assistant.</p>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#contact">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="site-content">
+        <section id="features" class="info-section">
+            <h2>Powerful Features</h2>
+            <p>Discover how Vallis can transform your Shopify experience with AI-driven insights, automation, and support.</p>
+        </section>
+        <section id="benefits" class="info-section">
+            <h2>Why Vallis?</h2>
+            <p>From increasing sales to saving time on management tasks, see the benefits of integrating Vallis into your Shopify store.</p>
+        </section>
+        <section id="contact" class="info-section">
+            <h2>Get Started with Vallis</h2>
+            <p>Ready to take your Shopify store to the next level? Contact us to learn more about Vallis and get started today!</p>
+            <button onclick="displayMessage()">Contact Us</button>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>© 2024 Vallis. Innovating eCommerce.</p>
+    </footer>
+    <script src="../static/script.js"></script>
+</body>
+</html>

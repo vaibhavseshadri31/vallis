@@ -1,4 +1,101 @@
+/* Basic Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: "helvetica", sans-serif;
-    text-align: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Ensures sans-serif font throughout */
+  line-height: 1.6;
+  background-color: #f0f8ff; /* Light azure */
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+  background-image: linear-gradient(to right, #007bff, #0062cc); /* Subtle blue gradient */
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.site-header h1, site-header p {
+  margin-bottom: 10px;
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover, nav ul li a:focus {
+  color: #ffc107; /* Vivid yellow */
+}
+
+/* Main Content */
+.info-section {
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.info-section:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  background-image: linear-gradient(to right, #007bff, #0062cc); /* Subtle blue gradient */
+  color: #fff;
+  margin-top: 20px;
+}
+
+button {
+  background-image: linear-gradient(to right, #56CCF2, #2F80ED); /* Azure gradient */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-image 0.3s ease, transform 0.2s ease;
+  outline: none;
+}
+
+button:hover, button:focus {
+  background-image: linear-gradient(to right, #2F80ED, #56CCF2); /* Slightly altered Azure gradient for hover/focus */
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+      flex-direction: column;
   }
+
+  nav ul li {
+      margin-bottom: 10px;
+  }
+}

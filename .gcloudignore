@@ -34,3 +34,9 @@
 
 /setup.cfg
 venv/
+data/
+index/
+src/main.py
+dependencies.py
+README.md
+__init__.py

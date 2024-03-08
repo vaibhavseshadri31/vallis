@@ -43,7 +43,7 @@ def query_index():
             400,
         )
 
-    user_context = "my name is vab"
+    global user_context
     if user_context == " ":
         return ("No user context found, please include a user context at /user_data",
                 400,

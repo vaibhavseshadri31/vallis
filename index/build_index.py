@@ -111,14 +111,5 @@ def create_ingestion_pipeline():
     return pipeline
 
 
-def get_open_source_llm():
-    llm = Replicate(
-        model="meta/llama-2-70b-chat:2796ee9483c3fd7aa2e171d38f4ca12251a30609463dcfd4cd76703f22e96cdf",
-        is_chat_model=True,
-        additional_kwargs={"max_new_tokens": 512})
-
-    return llm
-
-
 if __name__ == '__main__':
     build_index()
