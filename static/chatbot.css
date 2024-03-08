@@ -1,0 +1,49 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Make chat container fill the whole viewport height */
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #fff; /* Consider a lighter color for the message area */
+}
+
+.chat-form {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #eee;
+}
+
+.chat-form input[type="text"] {
+    width: 85%; /* Adjust based on preference */
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    resize: none; /* Prevent resizing */
+}
+
+.chat-form button {
+    width: 10%; /* Adjust based on preference */
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chat-messages {
+    background-color: #e5e5ea; /* A light background color for the messages area */
+    border-top: 1px solid #ddd;
+}

@@ -11,14 +11,17 @@ user_context = " "
 
 @app.route("/")
 def home():
+    return render_template("index.html")
 
-    dummy_times = [
-        datetime.datetime(2018, 1, 1, 10, 0, 0),
-        datetime.datetime(2018, 1, 2, 10, 30, 0),
-        datetime.datetime(2018, 1, 3, 11, 0, 0),
-    ]
 
-    return render_template("index.html", times=dummy_times)
+@app.route("/signup")
+def sign_up():
+    return render_template("signup.html")
+
+
+@app.route("/phil")
+def chat():
+    return render_template("chatbot.html")
 
 
 @app.route("/user_data", methods=["GET"])
@@ -44,6 +47,7 @@ def query_index():
         )
 
     global user_context
+    # user_context = "I am an aspiring Shopify entrepneur looking for help"
     if user_context == " ":
         return ("No user context found, please include a user context at /user_data",
                 400,

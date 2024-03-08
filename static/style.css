@@ -19,7 +19,7 @@ body {
 
 /* Header */
 .site-header {
-  background-image: linear-gradient(to right, #007bff, #0062cc); /* Subtle blue gradient */
+  background-image: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%); /* Subtle blue gradient */
   color: #fff;
   padding: 20px 0;
   text-align: center;
@@ -69,13 +69,13 @@ nav ul li a:hover, nav ul li a:focus {
 .site-footer {
   text-align: center;
   padding: 20px;
-  background-image: linear-gradient(to right, #007bff, #0062cc); /* Subtle blue gradient */
+  background-image: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%); /* Subtle blue gradient */
   color: #fff;
   margin-top: 20px;
 }
 
 button {
-  background-image: linear-gradient(to right, #56CCF2, #2F80ED); /* Azure gradient */
+  background-image: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%); /* Azure gradient */
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -86,7 +86,7 @@ button {
 }
 
 button:hover, button:focus {
-  background-image: linear-gradient(to right, #2F80ED, #56CCF2); /* Slightly altered Azure gradient for hover/focus */
+  background-image: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%); /* Slightly altered Azure gradient for hover/focus */
   transform: scale(1.05);
 }
 
