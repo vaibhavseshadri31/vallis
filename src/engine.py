@@ -14,6 +14,8 @@ from llama_index.core.chat_engine.condense_plus_context import (
 
 def create_engine(user_context: str, storage_dir: str) -> CondensePlusContextChatEngine:
 
+    # user_context = get_user_context(industry=industry, experience=experience, )
+
     index = get_index(storage_dir=storage_dir)
     # response_synthesizer = get_response_synthesizer(
     #     response_mode="refine")
@@ -49,7 +51,7 @@ def build_chat_engine(index: BaseIndex, user_context: str) -> CondensePlusContex
     {question}
 
     <Standalone question>
-    """ + f" Use this user context to create prompts {user_context}"
+    """ + f" Use this user context to help create prompts {user_context}"
 
     # list of `ChatMessage` objects
     custom_chat_history = [
@@ -77,3 +79,7 @@ def build_chat_engine(index: BaseIndex, user_context: str) -> CondensePlusContex
     )
 
     return chat_engine
+
+
+def get_user_context(industry: str, experience: int):
+    return

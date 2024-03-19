@@ -32,7 +32,7 @@ document.getElementById('chatForm').addEventListener('submit', async function(ev
 
 // Function to display a message in the chat
 function displayMessage(sender, message) {
-    const messageElement = document.createElement('div');
+    const messageElement = document.createElement('div'); 
     messageElement.classList.add('message', sender); // 'user' or 'bot' CSS class
     messageElement.textContent = message;
     const chatMessages = document.getElementById('chatMessages');

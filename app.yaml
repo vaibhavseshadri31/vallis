@@ -29,3 +29,4 @@ handlers:
 
 env_variables:
   OPENAI_API_KEY: "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"
+  FLASK_SECRET_KEY: "1482c60098afd124366d82da166b6539"
