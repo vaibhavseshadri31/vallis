@@ -5,6 +5,7 @@ from llama_index.core import ServiceContext
 # from llama_index.llms.ollama import Ollama
 from llama_index.llms.openai import OpenAI
 from llama_index.core.settings import Settings
+from llama_index.core.chat_engine.types import StreamingAgentChatResponse
 
 
 def main():
@@ -33,7 +34,7 @@ def main():
             return
 
         # print(chat_engine.chat(query))
-        response = chat_engine.stream_chat(query)
+        response: StreamingAgentChatResponse = chat_engine.stream_chat(query)
         response.print_response_stream()
 
         url_set = set()

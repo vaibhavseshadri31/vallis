@@ -1,43 +1,51 @@
-document.getElementById('chatForm').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Prevent the form from submitting in the traditional way
+// Setup the Socket.IO connection
+var socket = io();
+
+// Event listener for the form submission to send messages
+document.getElementById('chatForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
 
     const userInputField = document.getElementById('userInput');
     const userMessage = userInputField.value;
+    if (!userMessage.trim()) return; // Do not send empty messages
 
-    if (!userMessage.trim()) return; // Don't proceed if the message is only whitespace
+    displayMessage('user', userMessage); // Display the user's message in the chat area
+    userInputField.value = ''; // Clear the input field after sending
+    disableInput(true); // Disable the input while the bot is "typing"
 
-    displayMessage('user', userMessage); // Display the user's message in the chat
-    
-    // Clear the input field after sending the message
-    userInputField.value = '';
-
-    // Here, we're appending the user's message as a query parameter for the GET request.
-    const apiUrl = '/query?text=' + encodeURIComponent(userMessage);
-
-    // Fetch the response from the API
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.text(); 
-
-        // Display the response in the chat
-        displayMessage('bot', data); 
-    } catch (error) {
-        console.error('Fetch error:', error);
-        displayMessage('bot', 'Sorry, I couldn’t fetch the response. Please try again.');
-    }
+    socket.emit('send_message', {message: userMessage}); // Send the message to the server via WebSocket
 });
 
-// Function to display a message in the chat
+// Listen for messages from the server
+socket.on('receive_message', function(data) {
+    displayMessage('bot', data.message); // Display the bot's response in the chat area
+    disableInput(false); // Re-enable the input after the bot's message is fully displayed
+});
+
+// Function to display messages in the chat area
 function displayMessage(sender, message) {
-    const messageElement = document.createElement('div'); 
-    messageElement.classList.add('message', sender); // 'user' or 'bot' CSS class
-    messageElement.textContent = message;
     const chatMessages = document.getElementById('chatMessages');
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message', sender); // Apply CSS classes for styling
     chatMessages.appendChild(messageElement);
 
-    // Automatically scroll to the bottom of the chat messages
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+    let i = 0;
+    const speed = 50; // Speed in milliseconds for the typing effect
+
+    function typeWriter() {
+        if (i < message.length) {
+            messageElement.textContent += message.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        } else {
+            chatMessages.scrollTop = chatMessages.scrollHeight; // Automatically scroll to the bottom of the chat area
+        }
+    }
+
+    typeWriter(); // Start the typing effect
+}
+
+// Function to enable or disable the user input field
+function disableInput(disabled) {
+    document.getElementById('userInput').disabled = disabled;
 }

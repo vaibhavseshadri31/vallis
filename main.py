@@ -1,10 +1,12 @@
 import os
 from flask import Flask, render_template, request, session
+from flask_socketio import SocketIO, emit
 from src.engine import create_engine
+from llama_index.core.chat_engine.types import StreamingAgentChatResponse
 
 app = Flask(__name__)
-
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'optional-default-key')
+socketio = SocketIO(app)
 
 
 @app.route("/")
@@ -35,37 +37,19 @@ def store_user_data():
     return user_context, 200
 
 
-@app.route("/query", methods=["GET"])
-def query_index():
-
-    query_text = request.args.get("text", None)
-    if query_text is None:
-        return (
-            "No text found, please include a ?text=blah parameter in the URL",
-            400,
-        )
-
-    if "user_context" not in session or session["user_context"] == " ":
-        return ("No user context found, please include a user context at /user_data",
-                400,
-                )
-
-    user_context = session["user_context"]
-
+@socketio.on('send_message')
+def handle_message(data):
+    user_message = data['message']
+    user_context = session.get("user_context", "")
+    # Placeholder for where the chat engine processes the message
+    # This should be defined in your src.engine module
     chat_engine = create_engine(
         user_context=user_context, storage_dir="./storage")
+    response = chat_engine.chat(user_message)
+    print(response)
 
-    response = chat_engine.chat(query_text)
-
-    url_set = set()
-    for n in response.source_nodes:
-        url_set.add(n.metadata["url"])
-
-    for url in url_set:
-        response = str(response) + f"\n {url}"
-
-    return str(response), 200
+    emit('receive_message', {'message': response.response})
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+if __name__ == '__main__':
+    socketio.run(app, debug=True)
