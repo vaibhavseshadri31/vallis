@@ -46,9 +46,17 @@ def handle_message(data):
     chat_engine = create_engine(
         user_context=user_context, storage_dir="./storage")
     response = chat_engine.chat(user_message)
-    print(response)
 
-    emit('receive_message', {'message': response.response})
+    url_set = set()
+    for n in response.source_nodes:
+        # Hack to remove last two characters in metadata
+        url_set.add(n.metadata["url"][:-2])
+
+    response_with_urls = response.response
+    for url in url_set:
+        response_with_urls = response_with_urls + url
+
+    emit('receive_message', {'message': response_with_urls})
 
 
 if __name__ == '__main__':

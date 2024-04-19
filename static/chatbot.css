@@ -35,6 +35,17 @@ body {
 
 }
 
+.link-button {
+    padding: 5px 10px;
+    background-color: #0266ff;
+    font-family: 'Outfit', sans-serif; /* Apply the Outfit font */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
 .chat-messages {
     flex-grow: 1;
     overflow-y: auto;
