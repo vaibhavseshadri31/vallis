@@ -30,8 +30,8 @@ function displayMessage(sender, message) {
     messageElement.classList.add('message', sender);
     chatMessages.appendChild(messageElement);
 
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
-    let cleanMessage = message.replace(urlRegex, '').trim(); // Remove URLs from the displayed message
+    // Remove URLs from the message before typing it out
+    const cleanMessage = message.replace(/(https?:\/\/[^\s]+)/g, '');
 
     let i = 0;
     const speed = 20; // Speed in milliseconds for the typing effect
@@ -40,54 +40,67 @@ function displayMessage(sender, message) {
     function typeWriter() {
         if (i < cleanMessage.length) {
             typedText += cleanMessage.charAt(i);
-            messageElement.innerHTML = converter.makeHtml(typedText);
+            messageElement.innerHTML = converter.makeHtml(typedText); // Convert accumulated text to HTML
             i++;
             setTimeout(typeWriter, speed);
         } else {
-            // Collect all URLs
-            const urls = message.match(urlRegex);
-            if (urls && urls.length > 0) {
-                const linksButton = document.createElement('button');
-                linksButton.textContent = 'View Links';
-                linksButton.onclick = function() {
-                    showLinksModal(urls); // Function to handle showing the links
-                };
-                linksButton.classList.add('link-button');
-                messageElement.appendChild(linksButton);
-            }
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            chatMessages.scrollTop = chatMessages.scrollHeight; // Automatically scroll to the bottom of the chat area
+            // Add buttons for each URL after the message is typed out
+            addLinkButtons(message, messageElement);
         }
     }
 
-    typeWriter();
+    typeWriter(); // Start the typing effect
 }
 
-function showLinksModal(urls) {
-    var modal = document.getElementById("linksModal");
-    var linksList = document.getElementById("linksList");
-    var closeBtn = document.getElementsByClassName("close")[0];
+function addLinkButtons(text, container) {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    let match;
+    const linksContainer = document.createElement('div');  // Container for all link buttons
+    linksContainer.classList.add('links-container');  // Apply flex styles if using flex
 
-    // Populate the modal with links
-    linksList.innerHTML = urls.map(url => `<a href="${url}" target="_blank">${url}</a><br>`).join('');
-
-    // Display the modal
-    modal.style.display = "block";
-
-    // When the user clicks on <span> (x), close the modal
-    closeBtn.onclick = function() {
-        modal.style.display = "none";
+    while ((match = urlRegex.exec(text)) !== null) {
+        const url = match[0];
+        const linkButton = document.createElement('button');
+        let splitArray = url.split("/");
+        linkButton.textContent = splitArray[splitArray.length - 1];
+        linkButton.onclick = function() {
+            window.open(url, '_blank');
+        };
+        linkButton.classList.add('link-button');
+        linksContainer.appendChild(linkButton);  // Append each button to the container
     }
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
+    if (linksContainer.hasChildNodes()) {
+        container.appendChild(linksContainer);  // Only append if there are buttons
     }
 }
 
 
 
+// function showLinksModal(urls) {
+//     var modal = document.getElementById("linksModal");
+//     var linksList = document.getElementById("linksList");
+//     var closeBtn = document.getElementsByClassName("close")[0];
+
+//     // Populate the modal with links
+//     linksList.innerHTML = urls.map(url => `<a href="${url}" target="_blank">${url}</a><br>`).join('');
+
+//     // Display the modal
+//     modal.style.display = "block";
+
+//     // When the user clicks on <span> (x), close the modal
+//     closeBtn.onclick = function() {
+//         modal.style.display = "none";
+//     }
+
+//     // When the user clicks anywhere outside of the modal, close it
+//     window.onclick = function(event) {
+//         if (event.target == modal) {
+//             modal.style.display = "none";
+//         }
+//     }
+// }
 
 
 function disableInput(disabled) {

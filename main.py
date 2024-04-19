@@ -53,6 +53,9 @@ def handle_message(data):
         url_set.add(n.metadata["url"][:-2])
 
     response_with_urls = response.response
+
+    if url_set:
+        response_with_urls = response_with_urls + "<br><br> **Learn More:** "
     for url in url_set:
         response_with_urls = response_with_urls + " " + url + " "
 
