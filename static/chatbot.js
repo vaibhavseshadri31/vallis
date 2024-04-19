@@ -30,8 +30,8 @@ function displayMessage(sender, message) {
     messageElement.classList.add('message', sender);
     chatMessages.appendChild(messageElement);
 
-    const urlRegex = /(https?:\/\/[^\s]+)/g; // Regex to find URLs
-    let cleanMessage = message.replace(urlRegex, '').trim(); // Remove URLs from the message
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    let cleanMessage = message.replace(urlRegex, '').trim(); // Remove URLs from the displayed message
 
     let i = 0;
     const speed = 20; // Speed in milliseconds for the typing effect
@@ -39,30 +39,54 @@ function displayMessage(sender, message) {
 
     function typeWriter() {
         if (i < cleanMessage.length) {
-            typedText += cleanMessage.charAt(i); // Accumulate character by character
-            messageElement.innerHTML = converter.makeHtml(typedText); // Convert accumulated text to HTML
+            typedText += cleanMessage.charAt(i);
+            messageElement.innerHTML = converter.makeHtml(typedText);
             i++;
             setTimeout(typeWriter, speed);
         } else {
-            // After text is done typing out, check for URLs and create a button
+            // Collect all URLs
             const urls = message.match(urlRegex);
-            if (urls) {
-                urls.forEach(url => {
-                    const linkButton = document.createElement('button');
-                    linkButton.textContent = 'Open Link';
-                    linkButton.onclick = function() {
-                        window.open(url, '_blank'); // Opens the URL in a new tab
-                    };
-                    linkButton.classList.add('link-button');
-                    messageElement.appendChild(linkButton);
-                });
+            if (urls && urls.length > 0) {
+                const linksButton = document.createElement('button');
+                linksButton.textContent = 'View Links';
+                linksButton.onclick = function() {
+                    showLinksModal(urls); // Function to handle showing the links
+                };
+                linksButton.classList.add('link-button');
+                messageElement.appendChild(linksButton);
             }
-            chatMessages.scrollTop = chatMessages.scrollHeight; // Automatically scroll to the bottom of the chat area
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
     }
 
-    typeWriter(); // Start the typing effect
+    typeWriter();
 }
+
+function showLinksModal(urls) {
+    var modal = document.getElementById("linksModal");
+    var linksList = document.getElementById("linksList");
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+    // Populate the modal with links
+    linksList.innerHTML = urls.map(url => `<a href="${url}" target="_blank">${url}</a><br>`).join('');
+
+    // Display the modal
+    modal.style.display = "block";
+
+    // When the user clicks on <span> (x), close the modal
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+
 
 
 

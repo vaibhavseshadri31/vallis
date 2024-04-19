@@ -54,7 +54,7 @@ def handle_message(data):
 
     response_with_urls = response.response
     for url in url_set:
-        response_with_urls = response_with_urls + url
+        response_with_urls = response_with_urls + " " + url + " "
 
     emit('receive_message', {'message': response_with_urls})
 
