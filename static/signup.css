@@ -1,76 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Outfit', sans-serif; /* Consistent font with the chatbot */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #03040D; /* Dark background similar to the chatbot */
 }
 
 .signup-container {
     width: 90%; /* Responsive adjustment */
     max-width: 400px;
-    background: #fff;
+    background: #282828; /* Dark theme matching the chatbot */
     padding: 40px; /* Increased padding for better spacing */
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Style matched from chatbot */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Ensures vertical centering within the container */
 }
 
 h2 {
     text-align: center;
     margin-bottom: 2rem; /* Increased spacing for visual hierarchy */
-    color: #333;
+    color: #fff; /* White color for contrast */
     font-size: 1.5rem; /* Slightly larger title for emphasis */
 }
 
 .form-control {
     width: 100%;
     margin-bottom: 2rem; /* Increased margin for better spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items within form-control */
 }
 
 .form-control label {
-    display: block; /* Ensure labels are full-width */
-    margin-bottom: 8px; /* Slight increase for readability */
-    color: #606f7b;
+    width: 100%; /* Full width to match input fields */
+    text-align: left; /* Align text to the left within label */
+    color: #fff; /* Light color labels for readability on dark background */
     font-weight: 600; /* Slightly bolder labels for clarity */
+    margin-bottom: 8px; /* Slight increase for readability */
 }
 
 .form-control input {
-    width: 100%; /* Adjust width to simplify */
+    width: 100%; /* Full width for alignment */
     padding: 15px; /* Increased padding for easier interaction */
-    border: 2px solid #eff1f3;
+    border: 2px solid #444; /* Darker border for theme consistency */
     border-radius: 5px;
     font-size: 1rem;
-    color: #333;
-    background-color: #fff;
+    font-family: 'Outfit', sans-serif; /* Consistent font with the chatbot */
+    color: #fff; /* White text on dark background */
+    background-color: #333; /* Slightly lighter input field for visibility */
     transition: all 0.3s; /* Smooth transition for all properties */
 }
 
 .form-control input:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #007bff; /* Blue border for focus */
     box-shadow: 0 0 0 2px rgba(0,123,255,0.5); /* Subtle glow effect */
 }
 
 button {
-    width: 100%;
-    padding: 15px; /* Increased padding */
-    border-radius: 5px;
+    width: 50px;  /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    background-color: #0266ff;
+    color: white;
     border: none;
-    background-image: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
-    color: #ffffff;
-    font-size: 1.1rem; /* Slightly larger font for button */
+    border-radius: 50%; /* Keeps the button circular */
     cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Removes padding to fit SVG properly */
+}
+
+button svg {
+    width: 70%; /* Adjust the SVG size as needed */
+    height: 70%; /* Adjust the SVG size as needed */
+    fill: white; /* Change the color of SVG */
 }
 
 button:hover {
     transform: translateY(-2px); /* Slight lift effect */
-    background-image: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%);
+    background-color: #2575fc; /* Lighter blue for hover effect */
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 /* Responsive Design Adjustments */

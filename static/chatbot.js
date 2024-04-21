@@ -63,7 +63,7 @@ function addLinkButtons(text, container) {
         const url = match[0];
         const linkButton = document.createElement('button');
         let splitArray = url.split("/");
-        linkButton.textContent = splitArray[splitArray.length - 1];
+        linkButton.textContent = convertAndCapitalize(splitArray[splitArray.length - 1]);
         linkButton.onclick = function() {
             window.open(url, '_blank');
         };
@@ -74,6 +74,21 @@ function addLinkButtons(text, container) {
     if (linksContainer.hasChildNodes()) {
         container.appendChild(linksContainer);  // Only append if there are buttons
     }
+}
+
+function convertAndCapitalize(inputString) {
+    // Split the string by hyphens
+    const words = inputString.split('-');
+    
+    // Map each word to capitalize the first letter
+    const capitalizedWords = words.map(word => {
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    });
+    
+    // Join the words back together with spaces
+    const resultString = capitalizedWords.join(' ');
+    
+    return resultString;
 }
 
 

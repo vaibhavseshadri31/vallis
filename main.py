@@ -1,4 +1,5 @@
 import os
+import re
 from flask import Flask, render_template, request, session
 from flask_socketio import SocketIO, emit
 from src.engine import create_engine
@@ -50,7 +51,7 @@ def handle_message(data):
     url_set = set()
     for n in response.source_nodes:
         # Hack to remove last two characters in metadata
-        url_set.add(n.metadata["url"][:-2])
+        url_set.add(re.sub(r'[\W_]+$', '', n.metadata["url"]))
 
     response_with_urls = response.response
 
