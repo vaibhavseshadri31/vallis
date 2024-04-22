@@ -27,7 +27,6 @@ body {
     flex-direction: column;
     height: 95vh;
     width: 85vw;
-    max-width: 1200px; /* Optional: limit the width to ensure it doesn't get too wide on larger screens */
     background-color: #282828; /* Background color for the chat container */
     border: 1px solid #ddd;
     padding: 10px;
